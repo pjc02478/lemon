@@ -6,7 +6,7 @@ void func(microthread::task *t){
   printf("end func\n");
 }
 
-int main(){
+void main(){
   microthread::task(func)
     .schedule();
   
