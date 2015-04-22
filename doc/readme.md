@@ -6,6 +6,7 @@ namespace-tree
 * lemon
   * [time](time/)
   * [microthread](microthread/)
+  * [dispatcher](dispatcher/)
 
 methods
 ----
