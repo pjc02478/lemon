@@ -10,6 +10,8 @@ private:
 };
 
 void game_object::schedule_update(){
+  /* 단순히 while(true)를 돌면서 update를 호출하고 1프레임 대기하는것을 */
+  /* 반복하는것만으로도 업데이트를 스케쥴링 할 수 있다. */
   microthread::task([this](){
     while(true){
       update();
