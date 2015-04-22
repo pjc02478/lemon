@@ -1,4 +1,4 @@
-second
+lemon::time::second < lemon::time::unit
 ====
 
 description
