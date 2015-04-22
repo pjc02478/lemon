@@ -4,9 +4,9 @@ using namespace lemon;
 
 void func(microthread::task *t){
   printf("begin func\n");
-    delay(frame<60>(120)); /* 120 프레임 대기 */
+    delay(time::frame<60>(120)); /* 120 프레임 대기 */
   printf("after 120 frames\n");
-    delay(frame<60>(30)); /* 30 프레임 대기 */
+    delay(time::frame<60>(30)); /* 30 프레임 대기 */
   printf("after 30 frames\n");
 }
 void render(){
