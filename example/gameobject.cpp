@@ -46,7 +46,7 @@ void some_func(){
   printf("end move_to\n"); /* 이 명령은 1.6초동안 move_to가 끝난 후 실행된다 */
   
   printf("begin move_to async\n");
-    /* 새 마이크로스레드 태스크를 만들어 async하게 처리한다 */
+    /* 새 태스크를 만들어 async하게 처리한다 */
     microthread::task([&obj](){
       obj.move_to(time::second(2.0f), 50,50);
     }).schedule();
