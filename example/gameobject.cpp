@@ -35,3 +35,20 @@ void game_object::move_to(const time::unit &duration, float _x,float _y){
     delay(time::frame<60>(1));
   }
 }
+
+game_object obj;
+void some_func(){
+  /* 이제 매 프레임마다 obj.update()가 호출된다. */
+  obj.schedule_update();
+  
+  printf("begin move_to\n");
+    obj.move_to(time::second(1.6f), 40,40));
+  printf("end move_to\n"); /* 이 명령은 1.6초동안 move_to가 끝난 후 실행된다 */
+  
+  printf("begin move_to async\n");
+    /* 새 마이크로스레드 태스크를 만들어 async하게 처리한다 */
+    microthread::task([&obj](){
+      obj.move_to(time::second(2.0f), 50,50);
+    }).schedule();
+  printf("end move_to async\n"); /* 이 명령은 move_to의 완료와 관계 없이 바로 실행된다. */
+}
