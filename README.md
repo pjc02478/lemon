@@ -1,6 +1,6 @@
 lemon
 ====
 
-* lemon
-  * [time](doc/time/)
-  * [microthread](doc/microthread/)
+see
+  * [docs](doc/)
+  * [example](example/)
