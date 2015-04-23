@@ -13,14 +13,14 @@ pros
 
   ```C++
   void object::update(){
-   printf("hello update!\n");
+    printf("hello update!\n");
   }
   void object::schedule_update(){
-   microthread::task([this](microthread::task *t){
-    while(true){
-     delay(frame<60>(1));
-     update();
-    }
-   }).schedule();
+    microthread::task([this](microthread::task *t){
+      while(true){
+        delay(frame<60>(1));
+        update();
+      }
+    }).schedule();
   }
   ```
