@@ -1,6 +1,11 @@
 lemon::flowcontrol
 ====
 
+classes
+----
+* flowcontrol
+ * [signal](signal.md)
+
 functions
 ----
 * flowcontrol
