@@ -7,7 +7,8 @@ namespace-tree
   * [time](time/)
   * [microthread](microthread/)
   * [dispatcher](dispatcher/)
-
+  * [flowcontrol](flowcontrol/)
+  
 methods
 ----
 * lemon
