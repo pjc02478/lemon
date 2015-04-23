@@ -1,6 +1,14 @@
 lemon::flowcontrol::signal
 ====
 
+methods
+----
+* __notify_one__
+* __notify_all__
+
+properties
+----
+
 usage
 ----
 ```C++
