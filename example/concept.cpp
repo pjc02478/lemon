@@ -26,6 +26,6 @@ void main(){
     dispatcher::step();
     
     /* 게임의 60fps를 시뮬레이트 */
-    Sleep(time::frame<60>.interval);
+    Sleep(time::frame<60>::mspf);
   }
 }
