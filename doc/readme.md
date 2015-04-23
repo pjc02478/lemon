@@ -1,7 +1,7 @@
 lemon
 ====
 
-namespace-tree
+namespaces
 ----
 * lemon
   * [time](time/)
@@ -9,7 +9,7 @@ namespace-tree
   * [dispatcher](dispatcher/)
   * [flowcontrol](flowcontrol/)
   
-methods
+functions
 ----
 * lemon
   * initialize
