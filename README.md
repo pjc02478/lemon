@@ -12,28 +12,28 @@ pros
  * 이전의 구현
  ```C++
  void pre_heavy_work(){
-   printf("begin work\n");
+    printf("begin work\n");
    
-   /* ... */
+    /* ... */
 
-   work_pool.post_heavy_work();
+    work_pool.post_heavy_work();
  }
  void post_heavy_work(){
-   printf("end work\n");
+    printf("end work\n");
    
-   /* ... */
+    /* ... */
    
-   response();
+    response();
  }
  ```
  * lemon을 이용하면
  
  ```C++
  void func(){
-   printf("begin work\n");
-     heavy_work();
-   printf("end work\n");
-   response();
+    printf("begin work\n");
+      heavy_work();
+    printf("end work\n");
+    response();
  }
  ```
 * 스케쥴링이 필요할 때, 별도의 스케쥴러가 필요없고 오브젝트 스스로가 자신을 스케쥴링 할 수 있도록 작성할 수 있습니다.
