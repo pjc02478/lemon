@@ -14,6 +14,6 @@ void main(){
     int ch = _getch();
     
     if(ch == 'a')
-      s.notify();
+      s.notify_one();
   }
 }
