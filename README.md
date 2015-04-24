@@ -43,7 +43,7 @@ pros
     printf("hello update!\n");
   }
   void object::schedule_update(){
-    microthread::task([this](microthread::task *t){
+    microthread::task([this](){
       while(true){
         delay(frame<60>(1));
         update();
