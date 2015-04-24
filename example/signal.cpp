@@ -1,6 +1,6 @@
 signal s;
 
-void func(microthread::task *t){
+void func(){
   printf("begin func\n");
     delay_until(s);
   printf("end func\n");
