@@ -2,7 +2,7 @@
 
 using namespace lemon;
 
-void func(microthread::task *t){
+void func(){
   printf("begin func\n");
     delay(time::frame<60>(120)); /* 120 프레임 대기 */
   printf("after 120 frames\n");
