@@ -14,7 +14,7 @@ usage
 ----
 ```C++
 
-void func(task *t){
+void func(){
   printf("hello task!\n");
   t->yield();
   printf("bye task!\n");
