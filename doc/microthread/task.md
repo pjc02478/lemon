@@ -6,6 +6,12 @@ description
 
 methods
 ----
+* schedule
+* yield
+* join
+* stop
+* get
+* try_get
 
 properties
 ----
