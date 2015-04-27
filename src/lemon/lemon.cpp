@@ -1,7 +1,4 @@
-﻿// test.cpp : 肄섏넄 �쓳�슜 �봽濡쒓렇�옩�뿉 �?�븳 吏꾩엯�젏�쓣 �젙�쓽�빀�땲�떎.
-//
-
-#include "stdafx.h"
+﻿#include "stdafx.h"
 
 #include <Windows.h>
 #include "lemon.h"
