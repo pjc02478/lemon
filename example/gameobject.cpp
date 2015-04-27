@@ -25,8 +25,8 @@ void game_object::update(){
 
 void game_object::move_to(const time::unit &duration, float _x,float _y){
   int iters = duration.to_ms() / frame<60>(1).to_ms();
-  float step_x = x - _x;
-  float step_y = y - _y;
+  float step_x = (x - _x) / iters;
+  float step_y = (y - _y) / iters;
   
   for(int i=0;i<iters;i++){
     x += step_x;
