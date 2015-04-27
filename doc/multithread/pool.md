@@ -7,6 +7,8 @@ description
 static methods
 ----
 * set_max_workers
+* lock
+* unlock
 
 usage
 ----
