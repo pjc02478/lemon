@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\microthread">
+      <UniqueIdentifier>{b6fcad4c-fb9f-4884-8891-8be94152035c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\microthread\win32">
+      <UniqueIdentifier>{f5e5a097-446e-4c2b-9ca0-0e560fdbd1f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\time">
+      <UniqueIdentifier>{1c0868ed-fa37-40a2-8cab-bf2cdb0e13be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\time\win32">
+      <UniqueIdentifier>{671ee721-b42b-46a9-a544-e6be3098cb3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dispatcher">
+      <UniqueIdentifier>{3c8e2574-215d-4059-b7b8-e8505d43a9c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flowcontrol">
+      <UniqueIdentifier>{a2b580ce-e93f-48d6-b991-68d67c649161}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="microthread\task.h">
+      <Filter>Source Files\microthread</Filter>
+    </ClInclude>
+    <ClInclude Include="microthread\microthread.h">
+      <Filter>Source Files\microthread</Filter>
+    </ClInclude>
+    <ClInclude Include="microthread\win32\coroutine_win32.h">
+      <Filter>Source Files\microthread\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="lemon.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="plaftorm.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="time\units.h">
+      <Filter>Source Files\time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\time.h">
+      <Filter>Source Files\time</Filter>
+    </ClInclude>
+    <ClInclude Include="dispatcher\dispatcher.h">
+      <Filter>Source Files\dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="dispatcher\dispatcher_intern.h">
+      <Filter>Source Files\dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="flowcontrol\signal.h">
+      <Filter>Source Files\flowcontrol</Filter>
+    </ClInclude>
+    <ClInclude Include="flowcontrol\delay.h">
+      <Filter>Source Files\flowcontrol</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lemon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="microthread\task.cpp">
+      <Filter>Source Files\microthread</Filter>
+    </ClCompile>
+    <ClCompile Include="microthread\win32\coroutine_win32.cpp">
+      <Filter>Source Files\microthread\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="microthread\win32\microthread_win32.cpp">
+      <Filter>Source Files\microthread\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="time\win32\time_win32.cpp">
+      <Filter>Source Files\time\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="dispatcher\dispatcher.cpp">
+      <Filter>Source Files\dispatcher</Filter>
+    </ClCompile>
+    <ClCompile Include="flowcontrol\signal.cpp">
+      <Filter>Source Files\flowcontrol</Filter>
+    </ClCompile>
+    <ClCompile Include="flowcontrol\delay.cpp">
+      <Filter>Source Files\flowcontrol</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
