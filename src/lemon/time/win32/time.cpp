@@ -5,14 +5,12 @@ using namespace std;
 
 namespace lemon{
 	namespace time{
-		
+		static auto uptime_since = chrono::system_clock::now();
+
 		float now(){
-			static auto startTime = chrono::high_resolution_clock::now();
-			auto nowTime = chrono::high_resolution_clock::now();
+			auto _now = chrono::system_clock::now();
 
-			chrono::duration<float> dTime = nowTime - startTime;
-
-			return dTime.count();
+			return (chrono::duration<float>(_now - uptime_since)).count();
 		}
 	};
 };
