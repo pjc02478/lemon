@@ -22,9 +22,6 @@
     <Filter Include="Source Files\time">
       <UniqueIdentifier>{1c0868ed-fa37-40a2-8cab-bf2cdb0e13be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\time\win32">
-      <UniqueIdentifier>{671ee721-b42b-46a9-a544-e6be3098cb3a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\dispatcher">
       <UniqueIdentifier>{3c8e2574-215d-4059-b7b8-e8505d43a9c4}</UniqueIdentifier>
     </Filter>
@@ -89,9 +86,6 @@
     <ClCompile Include="microthread\win32\microthread_win32.cpp">
       <Filter>Source Files\microthread\win32</Filter>
     </ClCompile>
-    <ClCompile Include="time\win32\time_win32.cpp">
-      <Filter>Source Files\time\win32</Filter>
-    </ClCompile>
     <ClCompile Include="dispatcher\dispatcher.cpp">
       <Filter>Source Files\dispatcher</Filter>
     </ClCompile>
@@ -100,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="flowcontrol\delay.cpp">
       <Filter>Source Files\flowcontrol</Filter>
+    </ClCompile>
+    <ClCompile Include="time\win32\time.cpp">
+      <Filter>Source Files\time</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
