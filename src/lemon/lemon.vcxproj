@@ -99,7 +99,7 @@
     <ClCompile Include="microthread\win32\coroutine_win32.cpp" />
     <ClCompile Include="microthread\win32\microthread_win32.cpp" />
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="time\win32\time_win32.cpp" />
+    <ClCompile Include="time\win32\time.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
