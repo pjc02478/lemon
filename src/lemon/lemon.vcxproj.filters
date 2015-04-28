@@ -1,128 +1,109 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\microthread">
-      <UniqueIdentifier>{b6fcad4c-fb9f-4884-8891-8be94152035c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\microthread\win32">
-      <UniqueIdentifier>{f5e5a097-446e-4c2b-9ca0-0e560fdbd1f5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\time">
-      <UniqueIdentifier>{1c0868ed-fa37-40a2-8cab-bf2cdb0e13be}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\dispatcher">
-      <UniqueIdentifier>{3c8e2574-215d-4059-b7b8-e8505d43a9c4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\flowcontrol">
-      <UniqueIdentifier>{a2b580ce-e93f-48d6-b991-68d67c649161}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\multithread">
-      <UniqueIdentifier>{30d930c8-8efa-4cb7-8c2d-ba85a57f9f61}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\multithread\win32">
-      <UniqueIdentifier>{17ebe7d8-1648-4a39-8645-c35414802f42}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="microthread\task.h">
-      <Filter>Source Files\microthread</Filter>
-    </ClInclude>
-    <ClInclude Include="microthread\microthread.h">
-      <Filter>Source Files\microthread</Filter>
-    </ClInclude>
-    <ClInclude Include="microthread\win32\coroutine_win32.h">
-      <Filter>Source Files\microthread\win32</Filter>
-    </ClInclude>
-    <ClInclude Include="lemon.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="plaftorm.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="time\units.h">
-      <Filter>Source Files\time</Filter>
-    </ClInclude>
-    <ClInclude Include="time\time.h">
-      <Filter>Source Files\time</Filter>
-    </ClInclude>
-    <ClInclude Include="dispatcher\dispatcher.h">
-      <Filter>Source Files\dispatcher</Filter>
-    </ClInclude>
-    <ClInclude Include="dispatcher\dispatcher_intern.h">
-      <Filter>Source Files\dispatcher</Filter>
-    </ClInclude>
-    <ClInclude Include="flowcontrol\signal.h">
-      <Filter>Source Files\flowcontrol</Filter>
-    </ClInclude>
-    <ClInclude Include="flowcontrol\delay.h">
-      <Filter>Source Files\flowcontrol</Filter>
-    </ClInclude>
-    <ClInclude Include="flowcontrol\repeat.h">
-      <Filter>Source Files\flowcontrol</Filter>
-    </ClInclude>
-    <ClInclude Include="multithread\pool.h">
-      <Filter>Source Files\multithread</Filter>
-    </ClInclude>
-    <ClInclude Include="multithread\win32\concurrent_queue.h">
-      <Filter>Source Files\multithread\win32</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="flowcontrol\delay.cpp">
+      <Filter>lemon\flowcontrol</Filter>
     </ClCompile>
-    <ClCompile Include="lemon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="microthread\task.cpp">
-      <Filter>Source Files\microthread</Filter>
-    </ClCompile>
-    <ClCompile Include="microthread\win32\coroutine_win32.cpp">
-      <Filter>Source Files\microthread\win32</Filter>
-    </ClCompile>
-    <ClCompile Include="microthread\win32\microthread_win32.cpp">
-      <Filter>Source Files\microthread\win32</Filter>
-    </ClCompile>
-    <ClCompile Include="dispatcher\dispatcher.cpp">
-      <Filter>Source Files\dispatcher</Filter>
+    <ClCompile Include="flowcontrol\repeat.cpp">
+      <Filter>lemon\flowcontrol</Filter>
     </ClCompile>
     <ClCompile Include="flowcontrol\signal.cpp">
-      <Filter>Source Files\flowcontrol</Filter>
+      <Filter>lemon\flowcontrol</Filter>
     </ClCompile>
-    <ClCompile Include="flowcontrol\delay.cpp">
-      <Filter>Source Files\flowcontrol</Filter>
+    <ClCompile Include="microthread\win32\coroutine_win32.cpp">
+      <Filter>lemon\microthread\win32</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="flowcontrol\repeat.cpp">
-      <Filter>Source Files\flowcontrol</Filter>
+    <ClCompile Include="dispatcher\dispatcher.cpp">
+      <Filter>lemon\dispatcher</Filter>
+    </ClCompile>
+    <ClCompile Include="microthread\win32\microthread_win32.cpp">
+      <Filter>lemon\microthread\win32</Filter>
     </ClCompile>
     <ClCompile Include="multithread\pool.cpp">
-      <Filter>Source Files\multithread</Filter>
+      <Filter>lemon\multithread</Filter>
     </ClCompile>
-    <ClCompile Include="multithread\win32\concurrent_queue.cpp">
-      <Filter>Source Files\multithread\win32</Filter>
-=======
     <ClCompile Include="time\win32\time.cpp">
-      <Filter>Source Files\time</Filter>
->>>>>>> origin/master
+      <Filter>lemon\time</Filter>
     </ClCompile>
+    <ClCompile Include="microthread\task.cpp">
+      <Filter>lemon\microthread</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="lemon.cpp" />
+    <ClCompile Include="multithread\win32\concurrent_queue_win32.cpp">
+      <Filter>lemon\multithread\win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lemon.h">
+      <Filter>lemon</Filter>
+    </ClInclude>
+    <ClInclude Include="plaftorm.h">
+      <Filter>lemon</Filter>
+    </ClInclude>
+    <ClInclude Include="flowcontrol\delay.h">
+      <Filter>lemon\flowcontrol</Filter>
+    </ClInclude>
+    <ClInclude Include="flowcontrol\repeat.h">
+      <Filter>lemon\flowcontrol</Filter>
+    </ClInclude>
+    <ClInclude Include="flowcontrol\signal.h">
+      <Filter>lemon\flowcontrol</Filter>
+    </ClInclude>
+    <ClInclude Include="microthread\win32\coroutine_win32.h">
+      <Filter>lemon\microthread\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="dispatcher\dispatcher.h">
+      <Filter>lemon\dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="dispatcher\dispatcher_intern.h">
+      <Filter>lemon\dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="microthread\microthread.h">
+      <Filter>lemon\microthread</Filter>
+    </ClInclude>
+    <ClInclude Include="multithread\pool.h">
+      <Filter>lemon\multithread</Filter>
+    </ClInclude>
+    <ClInclude Include="time\time.h">
+      <Filter>lemon\time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\units.h">
+      <Filter>lemon\time</Filter>
+    </ClInclude>
+    <ClInclude Include="microthread\task.h">
+      <Filter>lemon\microthread</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="multithread\win32\concurrent_queue_win32.h">
+      <Filter>lemon\multithread\win32</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="lemon">
+      <UniqueIdentifier>{7f959139-4f04-4038-bb5a-10c630ca7ca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\flowcontrol">
+      <UniqueIdentifier>{f0d1951d-7f07-42a6-9866-17c4a652a461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\multithread">
+      <UniqueIdentifier>{45590b08-80a4-49a1-8b37-456788e9b916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\multithread\win32">
+      <UniqueIdentifier>{e52da4de-7534-4656-8311-51eb428b3a0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\microthread">
+      <UniqueIdentifier>{ac0a856c-53a5-4e58-9299-1cd85a680dbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\microthread\win32">
+      <UniqueIdentifier>{cbfd30c4-e6e3-4ae2-897c-1d29797f5a06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\dispatcher">
+      <UniqueIdentifier>{d216fe43-617a-45ae-b5b3-04bcd684138a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\time">
+      <UniqueIdentifier>{d8284e95-ce91-4262-b449-caa795b701e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
