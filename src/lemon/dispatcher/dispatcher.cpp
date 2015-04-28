@@ -10,8 +10,8 @@ using namespace std;
 namespace lemon{
 	namespace dispatcher{
 
-		vector<timer> pending;
-		vector<timer> running;
+		static vector<timer> pending;
+		static vector<timer> running;
 
 		timer::timer() :
 			last(time::now()){

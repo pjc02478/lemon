@@ -105,7 +105,7 @@
     <ClCompile Include="multithread\pool.cpp" />
     <ClCompile Include="multithread\win32\concurrent_queue.cpp" />
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="time\win32\time_win32.cpp" />
+    <ClCompile Include="time\win32\time.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
