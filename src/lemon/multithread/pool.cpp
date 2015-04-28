@@ -2,7 +2,7 @@
 
 #include "../lemon.h"
 #ifdef P_WIN32
-	#include "win32/concurrent_queue.h"
+	#include "win32/concurrent_queue_win32.h"
 #endif
 
 #include <thread>
