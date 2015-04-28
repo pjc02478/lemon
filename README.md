@@ -1,6 +1,13 @@
 lemon
 ====
 
+todo
+----
+* [ ] multithread::pool 구현
+* [ ] concurrent_foward_list 구현
+* [ ] dispatcher thread-safe 패치
+* [ ] generator 구현
+
 see
 ----
   * [docs](doc/)
