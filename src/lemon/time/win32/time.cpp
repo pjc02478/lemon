@@ -7,10 +7,12 @@ namespace lemon{
 	namespace time{
 		
 		float now(){
-			chrono::duration<double> dTime =
-			chrono::high_resolution_clock::now().time_since_epoch();
+			static auto startTime = chrono::high_resolution_clock::now();
+			auto nowTime = chrono::high_resolution_clock::now();
 
-			return static_cast<float>(dTime.count());
+			chrono::duration<float> dTime = nowTime - startTime;
+
+			return dTime.count();
 		}
 	};
 };
