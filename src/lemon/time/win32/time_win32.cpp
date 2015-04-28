@@ -1,4 +1,5 @@
 #include "time.h"
+#include <chrono>
 
 #include <Windows.h>
 
@@ -7,7 +8,10 @@ namespace lemon{
 		
 		/* TODO : std::chrono·Î ±³Ã¼ */
 		float now(){
-			return GetTickCount() / 1000.0f;
+			std::chrono::duration<double> dTime =
+			std::chrono::high_resolution_clock::now().time_since_epoch();
+
+			return static_cast<float>(dTime.count());
 		}
 	};
 };
