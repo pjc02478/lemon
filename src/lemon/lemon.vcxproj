@@ -79,11 +79,14 @@
     <ClInclude Include="dispatcher\dispatcher.h" />
     <ClInclude Include="dispatcher\dispatcher_intern.h" />
     <ClInclude Include="flowcontrol\delay.h" />
+    <ClInclude Include="flowcontrol\repeat.h" />
     <ClInclude Include="flowcontrol\signal.h" />
     <ClInclude Include="lemon.h" />
     <ClInclude Include="microthread\microthread.h" />
     <ClInclude Include="microthread\task.h" />
     <ClInclude Include="microthread\win32\coroutine_win32.h" />
+    <ClInclude Include="multithread\pool.h" />
+    <ClInclude Include="multithread\win32\concurrent_queue.h" />
     <ClInclude Include="plaftorm.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -93,11 +96,14 @@
   <ItemGroup>
     <ClCompile Include="dispatcher\dispatcher.cpp" />
     <ClCompile Include="flowcontrol\delay.cpp" />
+    <ClCompile Include="flowcontrol\repeat.cpp" />
     <ClCompile Include="flowcontrol\signal.cpp" />
     <ClCompile Include="lemon.cpp" />
     <ClCompile Include="microthread\task.cpp" />
     <ClCompile Include="microthread\win32\coroutine_win32.cpp" />
     <ClCompile Include="microthread\win32\microthread_win32.cpp" />
+    <ClCompile Include="multithread\pool.cpp" />
+    <ClCompile Include="multithread\win32\concurrent_queue.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="time\win32\time_win32.cpp" />
   </ItemGroup>

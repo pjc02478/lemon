@@ -31,6 +31,12 @@
     <Filter Include="Source Files\flowcontrol">
       <UniqueIdentifier>{a2b580ce-e93f-48d6-b991-68d67c649161}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\multithread">
+      <UniqueIdentifier>{30d930c8-8efa-4cb7-8c2d-ba85a57f9f61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\multithread\win32">
+      <UniqueIdentifier>{17ebe7d8-1648-4a39-8645-c35414802f42}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -72,6 +78,15 @@
     <ClInclude Include="flowcontrol\delay.h">
       <Filter>Source Files\flowcontrol</Filter>
     </ClInclude>
+    <ClInclude Include="flowcontrol\repeat.h">
+      <Filter>Source Files\flowcontrol</Filter>
+    </ClInclude>
+    <ClInclude Include="multithread\pool.h">
+      <Filter>Source Files\multithread</Filter>
+    </ClInclude>
+    <ClInclude Include="multithread\win32\concurrent_queue.h">
+      <Filter>Source Files\multithread\win32</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -100,6 +115,15 @@
     </ClCompile>
     <ClCompile Include="flowcontrol\delay.cpp">
       <Filter>Source Files\flowcontrol</Filter>
+    </ClCompile>
+    <ClCompile Include="flowcontrol\repeat.cpp">
+      <Filter>Source Files\flowcontrol</Filter>
+    </ClCompile>
+    <ClCompile Include="multithread\pool.cpp">
+      <Filter>Source Files\multithread</Filter>
+    </ClCompile>
+    <ClCompile Include="multithread\win32\concurrent_queue.cpp">
+      <Filter>Source Files\multithread\win32</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
