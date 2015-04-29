@@ -106,6 +106,7 @@
     <ClCompile Include="microthread\win32\microthread_win32.cpp" />
     <ClCompile Include="multithread\pool.cpp" />
     <ClCompile Include="multithread\win32\concurrent_queue_win32.cpp" />
+    <ClCompile Include="profiler\counter.cpp" />
     <ClCompile Include="profiler\profiler.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="time\win32\time.cpp" />

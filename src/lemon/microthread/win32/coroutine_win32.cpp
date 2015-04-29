@@ -4,6 +4,7 @@
 #include <cassert>
 
 #include "../task.h"
+#include "../../profiler/profiler_intern.h"
 
 using namespace std;
 
@@ -29,11 +30,14 @@ namespace lemon{
 			assert(fiber != nullptr);
 
 			yield_fiber = GetCurrentFiber();
+
+			__SWITCH
 			SwitchToFiber(fiber);
 		}
 		void coroutine::yield(){
 			assert(yield_fiber != nullptr);
 
+			__SWITCH
 			SwitchToFiber(yield_fiber);
 		}
 
@@ -43,7 +47,10 @@ namespace lemon{
 			coroutine *m =
 				(coroutine*)((int)arg - offsetof(coroutine, parent));
 
-			m->func();
+			__NEW_COROUTINE
+				m->func();
+			__END_COROUTINE
+
 			m->yield();
 		}
 	};

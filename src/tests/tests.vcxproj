@@ -81,7 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="test_profiler.cpp" />
     <ClCompile Include="test_timeunits.cpp" />
   </ItemGroup>
   <ItemGroup>

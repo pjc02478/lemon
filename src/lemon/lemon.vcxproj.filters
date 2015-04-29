@@ -36,6 +36,9 @@
     <ClCompile Include="profiler\profiler.cpp">
       <Filter>lemon\profiler</Filter>
     </ClCompile>
+    <ClCompile Include="profiler\counter.cpp">
+      <Filter>lemon\profiler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lemon.h">
