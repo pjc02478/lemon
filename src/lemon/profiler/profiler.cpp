@@ -12,7 +12,10 @@ namespace lemon{
 			current_name = name;
 		}
 		string get_name(bool reset){
-			return std::move(current_name);;
+			if (reset)
+				return std::move(current_name);
+			else
+				return current_name;
 		}
 	};
 };
