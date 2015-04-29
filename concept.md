@@ -1,0 +1,12 @@
+defer
+----
+```C++
+microthread::task([](){
+  printf("프레임이 끝난 뒤 스케쥴되는 태스크\n");
+}).defer().schedule();
+
+microthread::task([](){
+  printf("1.0초 후 스케쥴되는 태스크\n");
+}).defer(time::second(1.0f)).schedule();
+```
+
