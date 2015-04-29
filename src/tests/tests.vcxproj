@@ -81,7 +81,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="test_profiler.cpp" />
     <ClCompile Include="test_timeunits.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lemon\lemon.vcxproj">
+      <Project>{de2bedbe-425f-47ce-88d1-8db9bc8c7545}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
