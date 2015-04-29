@@ -27,6 +27,8 @@ namespace lemon{
 			reset_count(TAG_SWITCH);
 			reset_count(TAG_NEW_COROUTINE);
 			reset_count(TAG_END_COROUTINE);
+
+			reset_exe_times();
 		}
 
 		void start(){
@@ -40,9 +42,12 @@ namespace lemon{
 
 			profile_data pd = {
 				time::now() - profile_since,
+
 				get_count(TAG_SWITCH),
 				get_count(TAG_NEW_COROUTINE),
-				get_count(TAG_END_COROUTINE)
+				get_count(TAG_END_COROUTINE),
+
+				get_exe_time()
 			};
 
 			profile_since = -1;

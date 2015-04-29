@@ -18,6 +18,13 @@ namespace lemon{
 			fiber = CreateFiber(
 				0,
 				fiber_func, (void*)&parent);
+
+			name = profiler::get_name();
+			if (name.empty()){
+				char tmp[128];
+				sprintf_s(tmp, "unnamed_task_%x_%d", this, parent->get_id());
+				name.assign(tmp);
+			}
 		}
 		coroutine::~coroutine(){
 			if (fiber != nullptr){
@@ -31,13 +38,13 @@ namespace lemon{
 
 			yield_fiber = GetCurrentFiber();
 
-			__SWITCH
+			__SWITCH __BEGIN(name)
 			SwitchToFiber(fiber);
 		}
 		void coroutine::yield(){
 			assert(yield_fiber != nullptr);
 
-			__SWITCH
+			__SWITCH __LEAVE(name)
 			SwitchToFiber(yield_fiber);
 		}
 

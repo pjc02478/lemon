@@ -1,6 +1,7 @@
 #pragma once
 
 #include <functional>
+#include <string>
 
 namespace lemon{
 	namespace microthread{
@@ -20,6 +21,8 @@ namespace lemon{
 			static void _stdcall fiber_func(void *arg);
 
 		private:
+			std::string name;
+
 			task *parent;
 			const std::function<void()> func;
 			void *yield_fiber, *fiber;

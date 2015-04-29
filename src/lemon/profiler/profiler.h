@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <unordered_map>
 
 #define __NAME(n) lemon::profiler::set_name(n);
 
@@ -12,6 +13,8 @@ namespace lemon{
 			unsigned int context_switching;
 			unsigned int new_coroutine;
 			unsigned int end_coroutine;
+
+			std::unordered_map<std::string, float> exe_time;
 		};
 
 		void set_name(const std::string &name);

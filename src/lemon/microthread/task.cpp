@@ -5,6 +5,9 @@
 	#include "win32/coroutine_win32.h"
 #endif
 
+#include "../profiler/profiler.h"
+#include "../profiler/profiler_intern.h"
+
 #include <atomic>
 
 using namespace std;
