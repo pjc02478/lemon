@@ -10,7 +10,7 @@ lemon's
 todo
 ----
 * [ ] multithread::pool 구현
-* [ ] concurrent_foward_list 구현
+* [ ] concurrent_forward_list 구현
 * [ ] dispatcher thread-safe 패치
 * [ ] generator 구현
 
