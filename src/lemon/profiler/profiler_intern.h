@@ -17,6 +17,8 @@
 	#define __SWITCH
 	#define __NEW_COROUTINE
 	#define __END_COROUTINE
+	#define __BEGIN(n)
+	#define __LEAVE(n)
 #endif
 
 namespace lemon{
