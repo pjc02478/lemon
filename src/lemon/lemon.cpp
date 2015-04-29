@@ -3,6 +3,9 @@
 #include <Windows.h>
 #include "lemon.h"
 
+#include <string>
+#include <iostream>
+
 using namespace std;
 using namespace lemon;
 

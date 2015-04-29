@@ -33,6 +33,9 @@
     <ClCompile Include="multithread\win32\concurrent_queue_win32.cpp">
       <Filter>lemon\multithread\win32</Filter>
     </ClCompile>
+    <ClCompile Include="profiler\profiler.cpp">
+      <Filter>lemon\profiler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lemon.h">
@@ -79,6 +82,12 @@
     <ClInclude Include="multithread\win32\concurrent_queue_win32.h">
       <Filter>lemon\multithread\win32</Filter>
     </ClInclude>
+    <ClInclude Include="profiler\profiler.h">
+      <Filter>lemon\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="profiler\profiler_intern.h">
+      <Filter>lemon\profiler</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="lemon">
@@ -104,6 +113,9 @@
     </Filter>
     <Filter Include="lemon\time">
       <UniqueIdentifier>{d8284e95-ce91-4262-b449-caa795b701e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\profiler">
+      <UniqueIdentifier>{8be862fb-f8c8-4643-88cc-35057d188ba3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

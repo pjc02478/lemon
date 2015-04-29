@@ -11,8 +11,8 @@ namespace lemon{
 		void set_name(const string &name){
 			current_name = name;
 		}
-		const string &get_name(){
-			return current_name;
+		string get_name(bool reset){
+			return std::move(current_name);;
 		}
 	};
 };

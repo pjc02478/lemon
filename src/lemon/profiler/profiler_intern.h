@@ -5,6 +5,6 @@
 namespace lemon{
 	namespace profiler{
 
-		const std::string &get_name();
+		std::string get_name(bool reset=true);
 	};
 };
