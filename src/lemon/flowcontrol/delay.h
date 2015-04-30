@@ -9,6 +9,7 @@
 namespace lemon{
 	namespace flowcontrol{
 
+		void delay();
 		void delay(const time::unit &t);
 		void delay_until(signal &s);
 	};

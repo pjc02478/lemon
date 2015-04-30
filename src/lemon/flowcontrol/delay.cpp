@@ -6,6 +6,9 @@
 namespace lemon{
 	namespace flowcontrol{
 
+		void delay(){
+			delay(time::second(0));
+		}
 		void delay(const time::unit &t){
 			dispatcher::timer tmr;
 			tmr.remain = t.to_s();

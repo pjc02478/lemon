@@ -21,7 +21,7 @@ void main(){
 	lemon::microthread::task a([](){
 		printf("123\n");
 
-		flowcontrol::delay(time::second(1.4f));
+		flowcontrol::delay();
 		
 		printf("456\n");
 	});
@@ -37,7 +37,7 @@ void main(){
 
 		printf("QWER\n");
 	});
-	b.schedule();
+	//b.schedule();
 
 	while (true){		
 		lemon::dispatcher::step();
