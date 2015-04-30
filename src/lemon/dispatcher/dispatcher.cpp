@@ -20,7 +20,7 @@ namespace lemon{
 		timer &add_timer(const timer &t){
 			pending.push_back(t);
 
-			return *pending.begin();
+			return *pending.rbegin();
 		}
 
 		void step(){

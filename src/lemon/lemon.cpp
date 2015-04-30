@@ -21,8 +21,6 @@ void main(){
 	lemon::microthread::task a([](){
 		printf("123\n");
 
-		Sleep(1000);
-
 		flowcontrol::delay(time::second(1.4f));
 		
 		printf("456\n");
