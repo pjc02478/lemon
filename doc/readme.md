@@ -9,6 +9,7 @@ namespaces
   * [multithread](multithread/)
   * [dispatcher](dispatcher/)
   * [flowcontrol](flowcontrol/)
+  * [profiler](profiler/)
   
 functions
 ----
