@@ -1,6 +1,11 @@
 lemon::profiler
 ====
 
+structures
+----
+* profiler
+  * [profile_data](!profile_data)
+
 functions
 ----
 * profiler
