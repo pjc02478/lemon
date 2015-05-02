@@ -15,6 +15,8 @@ namespace lemon{
 			unsigned int end_coroutine;
 
 			std::unordered_map<std::string, float> exe_time;
+
+			void print();
 		};
 
 		void set_name(const std::string &name);

@@ -48,21 +48,7 @@ void main(){
 		if (kbhit() && profiler::is_profiling() ){
 			auto &&pd = profiler::end();
 
-			printf(
-				"\n==profiling data==\n"
-				"  - duration : %20f\n"
-				"  - context switching : %16d\n"
-				"  - new coroutine : %20d\n"
-				"  - end coroutine : %20d\n"
-				"  - tasks \n",
-				pd.duration,
-				pd.context_switching,
-				pd.new_coroutine, pd.end_coroutine);
-
-			for (auto &p : pd.exe_time){
-				printf("    - %s : %f\n",
-					p.first.c_str(), p.second);
-			}
+			pd.print();
 		}
 	}
 }
