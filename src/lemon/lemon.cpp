@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include <conio.h>
+#include <thread>
 
 
 #include "profiler/profiler.h"
@@ -39,22 +40,25 @@ void main(){
 	});
 	//b.schedule();
 
+	microthread::task abc([](){});
 	{
-	microthread::task abc1([](){});
-	{
-		microthread::task abc = abc1;
-		printf("11\n");
-		//cout<< abc.coro.use_count();
-	}
+	microthread::task abc1([](){
+		while(true){
+		//	printf("QQ\n");
+			flowcontrol::delay(time::frame<60>(1));
+		}
+	});
+
 	abc1.schedule();
-	printf("22\n");
+	//bb = abc2;
+	abc = std::move(abc1);
 	}
 
 	while (true){		
 		lemon::dispatcher::step();
 
 		printf("-");
-		Sleep(11);
+		Sleep(1000 / 60);
 
 		if (kbhit() && profiler::is_profiling() ){
 			auto &&pd = profiler::end();

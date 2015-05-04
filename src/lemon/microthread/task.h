@@ -20,6 +20,13 @@ namespace lemon{
 			bool is_yieldable() const;
 			void set_yieldable(bool v);
 
+			task(task &&other);
+			task &operator=(task &&other);
+
+		private:
+			task(const task &other);
+			task &operator=(const task &other);
+
 		private:
 			unsigned int id;
 

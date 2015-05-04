@@ -26,6 +26,23 @@ namespace lemon{
 		task::~task(){
 		}
 
+		task::task(task &&other) :
+			id(other.id),
+			coro(other.coro){
+
+			other.id = -1;
+		}
+		task &task::operator=(task &&other){
+			if(this != &other){
+				id = other.id;
+				coro = other.coro;
+
+				other.id = -1;
+			}
+
+			return *this;
+		}
+
 		void task::schedule() const{
 			coro->schedule();
 		}
