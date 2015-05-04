@@ -97,6 +97,9 @@
     <ClInclude Include="multithread\task.h">
       <Filter>lemon\multithread</Filter>
     </ClInclude>
+    <ClInclude Include="microthread\handle.h">
+      <Filter>lemon\microthread</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="lemon">

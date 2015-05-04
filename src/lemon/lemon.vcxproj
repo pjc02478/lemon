@@ -85,6 +85,7 @@
     <ClInclude Include="flowcontrol\repeat.h" />
     <ClInclude Include="flowcontrol\signal.h" />
     <ClInclude Include="lemon.h" />
+    <ClInclude Include="microthread\handle.h" />
     <ClInclude Include="microthread\microthread.h" />
     <ClInclude Include="microthread\task.h" />
     <ClInclude Include="microthread\win32\coroutine_win32.h" />
