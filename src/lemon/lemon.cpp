@@ -40,6 +40,15 @@ void main(){
 		flowcontrol::delay(time::second(1.4f));
 
 		printf("QWER\n");
+
+		microthread::task c([](){
+			printf("hello c\n");
+			flowcontrol::delay(time::second(1.4f));
+			printf("bye c\n");
+		});
+		c.schedule();
+
+		printf("end of c\n");
 	});
 	b.schedule();
 
