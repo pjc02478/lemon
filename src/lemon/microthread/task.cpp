@@ -21,10 +21,10 @@ namespace lemon{
 
 		task::task(
 			const function<void()> &f) :
+			id(_id.fetch_add(1)),
 			sig(new(nothrow) flowcontrol::signal()),
 			coro(new(nothrow) coroutine(this, f)){
 
-			id = _id.fetch_add(1);
 		}
 		task::~task(){
 		}
