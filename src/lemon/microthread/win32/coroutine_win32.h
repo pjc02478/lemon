@@ -1,6 +1,7 @@
 #pragma once
 
 #include <functional>
+#include <memory>
 #include <string>
 
 namespace lemon{
@@ -18,6 +19,7 @@ namespace lemon{
 			void yield();
 
 		private:
+			void dispose();
 			static void _stdcall fiber_func(void *arg);
 
 		private:
@@ -25,7 +27,8 @@ namespace lemon{
 
 			task *parent;
 			const std::function<void()> func;
-			void *yield_fiber, *fiber;
+			void *yield_fiber;
+			std::shared_ptr<void> fiber;
 		};
 	};
 };

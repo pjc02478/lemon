@@ -39,6 +39,17 @@ void main(){
 	});
 	//b.schedule();
 
+	{
+	microthread::task abc1([](){});
+	{
+		microthread::task abc = abc1;
+		printf("11\n");
+		//cout<< abc.coro.use_count();
+	}
+	abc1.schedule();
+	printf("22\n");
+	}
+
 	while (true){		
 		lemon::dispatcher::step();
 

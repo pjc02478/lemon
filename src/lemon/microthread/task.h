@@ -1,6 +1,7 @@
 #pragma once
 
 #include <functional>
+#include <memory>
 
 namespace lemon{
 	namespace microthread{
@@ -22,7 +23,7 @@ namespace lemon{
 		private:
 			unsigned int id;
 
-			coroutine *coro;
+			std::shared_ptr<coroutine> coro;
 		};
 	};
 };

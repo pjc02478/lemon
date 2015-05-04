@@ -18,16 +18,12 @@ namespace lemon{
 		static atomic<unsigned int> _id = 0;
 
 		task::task(
-			const function<void()> &f){
+			const function<void()> &f) :
+			coro(new(nothrow) coroutine(this, f)){
 
 			id = _id.fetch_add(1);
-			coro = new(nothrow) coroutine(this, f);
 		}
 		task::~task(){
-			if (coro != nullptr){
-				delete coro;
-				coro = nullptr;
-			}
 		}
 
 		void task::schedule() const{

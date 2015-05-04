@@ -39,6 +39,9 @@
     <ClCompile Include="profiler\counter.cpp">
       <Filter>lemon\profiler</Filter>
     </ClCompile>
+    <ClCompile Include="multithread\task.cpp">
+      <Filter>lemon\multithread</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lemon.h">
@@ -90,6 +93,9 @@
     </ClInclude>
     <ClInclude Include="profiler\profiler_intern.h">
       <Filter>lemon\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="multithread\task.h">
+      <Filter>lemon\multithread</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

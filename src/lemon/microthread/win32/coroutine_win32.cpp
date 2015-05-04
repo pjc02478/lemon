@@ -15,9 +15,10 @@ namespace lemon{
 			const function<void()> &f) :
 			parent(p), func(f){
 
-			fiber = CreateFiber(
+			fiber.reset(CreateFiber(
 				0,
-				fiber_func, (void*)&parent);
+				fiber_func, (void*)&parent),
+				std::bind(&coroutine::dispose, this));
 
 			name = profiler::get_name();
 			if (name.empty()){
@@ -27,19 +28,19 @@ namespace lemon{
 			}
 		}
 		coroutine::~coroutine(){
-			if (fiber != nullptr){
-				DeleteFiber(fiber);
-				fiber = nullptr;
-			}
+		}
+
+		void coroutine::dispose(){
+			DeleteFiber(fiber.get());
 		}
 
 		void coroutine::schedule(){
-			assert(fiber != nullptr);
+			assert(fiber.get() != nullptr);
 
 			yield_fiber = GetCurrentFiber();
 
 			__SWITCH __BEGIN(name)
-			SwitchToFiber(fiber);
+			SwitchToFiber(fiber.get());
 		}
 		void coroutine::yield(){
 			assert(yield_fiber != nullptr);
