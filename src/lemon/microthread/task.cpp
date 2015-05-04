@@ -30,7 +30,8 @@ namespace lemon{
 			coro->schedule();
 		}
 		void task::yield() const{
-			coro->yield();
+			if(is_yieldable())
+				coro->yield();
 		}
 
 		unsigned int task::get_id() const{
