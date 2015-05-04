@@ -5,6 +5,7 @@
 
 #include "../task.h"
 #include "../../profiler/profiler_intern.h"
+#include "../../flowcontrol/signal.h"
 
 using namespace std;
 
@@ -58,7 +59,8 @@ namespace lemon{
 			__NEW_COROUTINE
 				m->func();
 			__END_COROUTINE
-
+			
+			m->parent->sig->notify_one();
 			m->yield();
 		}
 	};

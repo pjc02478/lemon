@@ -26,13 +26,13 @@ namespace lemon{
 		}
 
 		void begin_task(const std::string &name){
-			assert(exe_since == -1);
+			//assert(exe_since == -1);
 
 			current_task = name;
 			exe_since = time::now();
 		}
 		void leave_task(const std::string &name){
-			assert(exe_since != -1);
+			//assert(exe_since != -1);
 
 			exe_time[name] += time::now() - exe_since;
 

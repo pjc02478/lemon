@@ -22,14 +22,17 @@ void main(){
 	lemon::microthread::task a([](){
 		printf("123\n");
 
-		flowcontrol::delay();
+		flowcontrol::delay(time::second(1));
 		
 		printf("456\n");
 	});
 	a.schedule();
 
 	__NAME("hello_task")
-	lemon::microthread::task b([](){
+	lemon::microthread::task b([&a](){
+		a.join();
+		printf("a joined\n");
+
 		flowcontrol::delay(time::second(0.5f));
 
 		printf("ASDF\n");
@@ -38,21 +41,25 @@ void main(){
 
 		printf("QWER\n");
 	});
-	//b.schedule();
+	b.schedule();
 
+	/*
 	microthread::task abc([](){});
 	{
 	microthread::task abc1([](){
 		while(true){
 		//	printf("QQ\n");
+			printf("tt %x\n", &microthread::get_current());
 			flowcontrol::delay(time::frame<60>(1));
 		}
 	});
 
 	abc1.schedule();
+	printf("sched2\n");
 	//bb = abc2;
 	abc = std::move(abc1);
 	}
+	*/
 
 	while (true){		
 		lemon::dispatcher::step();

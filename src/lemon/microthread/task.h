@@ -4,10 +4,15 @@
 #include <memory>
 
 namespace lemon{
+	namespace flowcontrol{
+		class signal;
+	};
 	namespace microthread{
 		class coroutine;
 
 		class task{
+			friend coroutine;
+
 		public:
 			task(
 				const std::function<void()> &f);
@@ -15,6 +20,8 @@ namespace lemon{
 
 			void yield()  const;
 			void schedule() const;
+
+			void join() const;
 
 			unsigned int get_id() const;
 			bool is_yieldable() const;
@@ -30,6 +37,7 @@ namespace lemon{
 		private:
 			unsigned int id;
 
+			std::shared_ptr<flowcontrol::signal> sig;
 			std::shared_ptr<coroutine> coro;
 		};
 	};

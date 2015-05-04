@@ -7,6 +7,8 @@
 
 #include "../profiler/profiler.h"
 #include "../profiler/profiler_intern.h"
+#include "../flowcontrol/delay.h"
+#include "../flowcontrol/signal.h"
 
 #include <atomic>
 
@@ -19,6 +21,7 @@ namespace lemon{
 
 		task::task(
 			const function<void()> &f) :
+			sig(new(nothrow) flowcontrol::signal()),
 			coro(new(nothrow) coroutine(this, f)){
 
 			id = _id.fetch_add(1);
@@ -26,16 +29,18 @@ namespace lemon{
 		task::~task(){
 		}
 
-		task::task(task &&other) :
-			id(other.id),
-			coro(other.coro){
-
+		task::task(task &&other){
+			id = other.id;
+			coro = other.coro;
+			sig = other.sig;
+			
 			other.id = -1;
 		}
 		task &task::operator=(task &&other){
 			if(this != &other){
 				id = other.id;
 				coro = other.coro;
+				sig = other.sig;
 
 				other.id = -1;
 			}
@@ -49,6 +54,13 @@ namespace lemon{
 		void task::yield() const{
 			if(is_yieldable())
 				coro->yield();
+		}
+
+		void task::join() const{
+			sig->add_waiting_context(
+				get_current());
+
+			flowcontrol::delay_until(*sig);
 		}
 
 		unsigned int task::get_id() const{
