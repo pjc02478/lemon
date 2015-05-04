@@ -42,6 +42,9 @@
     <ClCompile Include="multithread\task.cpp">
       <Filter>lemon\multithread</Filter>
     </ClCompile>
+    <ClCompile Include="microthread\handle.cpp">
+      <Filter>lemon\microthread</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lemon.h">

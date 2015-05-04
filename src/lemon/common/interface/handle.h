@@ -1,7 +1,7 @@
 #pragma once
 
 namespace lemon{
-	namespace interface{
+	namespace intf{
 
 		class handle{
 		public:

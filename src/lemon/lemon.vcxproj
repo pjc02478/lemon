@@ -106,6 +106,7 @@
     <ClCompile Include="flowcontrol\repeat.cpp" />
     <ClCompile Include="flowcontrol\signal.cpp" />
     <ClCompile Include="lemon.cpp" />
+    <ClCompile Include="microthread\handle.cpp" />
     <ClCompile Include="microthread\task.cpp" />
     <ClCompile Include="microthread\win32\coroutine_win32.cpp" />
     <ClCompile Include="microthread\win32\microthread_win32.cpp" />

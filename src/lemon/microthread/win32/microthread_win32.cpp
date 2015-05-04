@@ -5,11 +5,13 @@
 
 namespace lemon{
 	namespace microthread{
+
+		/*
 		task &get_current(){
 			assert(GetFiberData() != nullptr);
 
-			/*  ???  */
 			return *(task*)*(task**)GetFiberData();
 		}
+		*/
 	};
 };

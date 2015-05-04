@@ -3,12 +3,17 @@
 #include <functional>
 #include <memory>
 
+#include "handle.h"
+
 namespace lemon{
 	namespace flowcontrol{
 		class signal;
 	};
 	namespace microthread{
 		class coroutine;
+
+		handle create(
+			const std::function<void()> &f);
 
 		class task{
 			friend coroutine;

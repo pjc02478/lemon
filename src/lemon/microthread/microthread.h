@@ -2,8 +2,8 @@
 
 namespace lemon{
 	namespace microthread{
-		class task;
+		class handle;
 
-		task &get_current();
+		handle get_current();
 	};
 };

@@ -11,19 +11,52 @@
 #include "../flowcontrol/signal.h"
 
 #include <atomic>
+#include <unordered_map>
 
 using namespace std;
 
 namespace lemon{
 	namespace microthread{
+		struct task_data{
+			unsigned int id;
+			shared_ptr<flowcontrol::signal> sig;
+			shared_ptr<coroutine> coro;
+
+			task_data(
+				unsigned int _id,
+				const function<void()> &f) :
+				id(_id),
+				sig(new(nothrow)flowcontrol::signal()),
+				coro(new(nothrow)coroutine(f)){
+			}
+
+			handle create_handle(){
+				return microthread::handle(
+					id, coro, sig);
+			}
+		};
 
 		static atomic<unsigned int> _id = 0;
+		static unordered_map<unsigned int,unique_ptr<task_data>> tasks;
+
+		handle create(
+			const function<void()> &f){
+
+			auto id = _id.fetch_add(1);
+			auto task = make_unique<task_data>(id, f);
+			auto &slot = tasks[id];
+
+			slot = std::move(task);
+
+			return slot->create_handle();
+		}
+		
 
 		task::task(
 			const function<void()> &f) :
 			id(_id.fetch_add(1)),
 			sig(new(nothrow) flowcontrol::signal()),
-			coro(new(nothrow) coroutine(this, f)){
+			coro(new(nothrow) coroutine(f)){
 
 		}
 		task::~task(){

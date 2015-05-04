@@ -11,7 +11,6 @@ namespace lemon{
 		class coroutine{
 		public:
 			coroutine(
-				task *p,
 				const std::function<void()> &f);
 			virtual ~coroutine();
 

@@ -19,6 +19,7 @@ void main(){
 
 	profiler::start();
 
+	/*
 	lemon::microthread::task a([](){
 		printf("123\n");
 
@@ -51,6 +52,16 @@ void main(){
 		printf("end of c\n");
 	});
 	b.schedule();
+	*/
+	
+	auto handle = microthread::create([](){
+		printf("hello\n");
+		flowcontrol::delay();
+		printf("world\n");
+	});
+
+	handle.schedule();
+
 
 	/*
 	microthread::task abc([](){});
