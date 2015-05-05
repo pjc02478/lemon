@@ -43,14 +43,14 @@ namespace lemon{
 			__SWITCH __BEGIN(name)
 			SwitchToFiber(fiber.get());
 		}
-		void coroutine::yield(){
+		void coroutine::yield() const{
 			assert(yield_fiber != nullptr);
 
 			__SWITCH __LEAVE(name)
 			SwitchToFiber(yield_fiber);
 		}
 
-		task &coroutine::get_task(){
+		task &coroutine::get_task() const{
 			return parent;
 		}
 

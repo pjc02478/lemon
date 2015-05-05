@@ -17,9 +17,9 @@ namespace lemon{
 			virtual ~coroutine();
 
 			void schedule();
-			void yield();
+			void yield() const;
 
-			task &get_task();
+			task &get_task() const;
 
 		private:
 			void dispose();
