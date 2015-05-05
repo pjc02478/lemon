@@ -6,16 +6,20 @@
 
 namespace lemon{
 	namespace microthread{
-		class task;
+		struct task;
+		class handle;
 
 		class coroutine{
 		public:
 			coroutine(
+				task &parent,
 				const std::function<void()> &f);
 			virtual ~coroutine();
 
 			void schedule();
 			void yield();
+
+			task &get_task();
 
 		private:
 			void dispose();
@@ -24,7 +28,7 @@ namespace lemon{
 		private:
 			std::string name;
 
-			task *parent;
+			task &parent;
 			const std::function<void()> func;
 			void *yield_fiber;
 			std::shared_ptr<void> fiber;

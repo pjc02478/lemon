@@ -12,8 +12,9 @@ using namespace std;
 namespace lemon{
 	namespace microthread{
 		coroutine::coroutine(
+			task &_parent,
 			const function<void()> &f) :
-			func(f){
+			parent(_parent), func(f){
 				
 			fiber.reset(CreateFiber(
 				0,
@@ -23,7 +24,7 @@ namespace lemon{
 			name = profiler::get_name();
 			if (name.empty()){
 				char tmp[128];
-				sprintf_s(tmp, "unnamed_task_%x_%d", this, 1234);
+				sprintf_s(tmp, "unnamed_task_%x_%d", this, parent.id);
 				name.assign(tmp);
 			}
 		}
@@ -49,6 +50,10 @@ namespace lemon{
 			SwitchToFiber(yield_fiber);
 		}
 
+		task &coroutine::get_task(){
+			return parent;
+		}
+
 		void _stdcall coroutine::fiber_func(void *arg){
 			assert(arg != nullptr);
 
@@ -59,7 +64,7 @@ namespace lemon{
 				m->func();
 			__END_COROUTINE
 			
-			m->parent->sig->notify_one();
+			m->parent.sig->notify_one();
 			m->yield();
 		}
 	};

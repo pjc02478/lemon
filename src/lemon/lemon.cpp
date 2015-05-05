@@ -62,6 +62,15 @@ void main(){
 
 	handle.schedule();
 
+	auto handle2 = microthread::create([&handle](){
+		handle.join();
+
+		printf("joined\n");
+		flowcontrol::delay(time::frame<60>(30));
+		printf("delayed\n");
+	});
+	handle2.schedule();
+
 
 	/*
 	microthread::task abc([](){});
