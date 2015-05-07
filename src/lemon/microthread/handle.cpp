@@ -29,19 +29,23 @@ namespace lemon{
 			other.id = -1;
 		}
 
-		void handle::schedule() const{
+		const handle &handle::schedule() const{
 			auto coro = coro_wp.lock();	
 
 			if(coro)
 				coro->schedule();
+
+			return *this;
 		}
-		void handle::yield() const{
+		const handle &handle::yield() const{
 			if(is_yieldable()){
 				auto coro = coro_wp.lock();
 
 				if(coro)
 					coro->yield();
 			}
+
+			return *this;
 		}
 
 		void handle::join() const{
