@@ -29,6 +29,11 @@ namespace lemon{
 			other.id = -1;
 		}
 
+		const handle &handle::defer(const time::unit &t) const{
+
+			return *this;
+		}
+
 		const handle &handle::schedule() const{
 			auto coro = coro_wp.lock();	
 

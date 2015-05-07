@@ -20,6 +20,8 @@ namespace lemon{
 				std::weak_ptr<flowcontrol::signal> sig_wp);
 			handle(handle &&);
 
+			const handle &defer(const time::unit &t) const;
+
 			const handle &yield() const;
 			const handle &schedule() const;
 
