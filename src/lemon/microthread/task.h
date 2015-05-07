@@ -16,15 +16,17 @@ namespace lemon{
 			unsigned int id;
 			std::shared_ptr<flowcontrol::signal> sig;
 			std::shared_ptr<coroutine> coro;
+			handle handle;
 
 			task(
 				unsigned int _id,
 				const std::function<void()> &f);
 
-			handle create_handle() const;
+		private:
+			task(const task &);
 		};
 
-		handle create(
+		handle &create(
 			const std::function<void()> &f);
 	};
 };

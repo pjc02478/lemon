@@ -6,6 +6,9 @@
 #include "../common/interface/handle.h"
 
 namespace lemon{
+	namespace time{
+		struct unit;
+	};
 	namespace flowcontrol{
 		class signal;
 	};

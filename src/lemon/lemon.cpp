@@ -54,7 +54,7 @@ void main(){
 	b.schedule();
 	*/
 	
-	auto handle = microthread::create([](){
+	auto &handle = microthread::create([](){
 		printf("hello\n");
 		flowcontrol::delay();
 		printf("world\n");
@@ -62,7 +62,7 @@ void main(){
 
 	handle.schedule();
 
-	auto handle2 = microthread::create([&handle](){
+	auto &handle2 = microthread::create([&handle](){
 		handle.join();
 
 		printf("joined\n");

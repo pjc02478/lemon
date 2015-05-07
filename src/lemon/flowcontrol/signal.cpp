@@ -12,7 +12,7 @@ namespace lemon{
 			
 			auto &ctx = ctxs.top().get();
 			ctxs.pop();
-			ctx.create_handle().schedule();
+			ctx.handle.schedule();
 			
 			return true;
 		}

@@ -25,15 +25,11 @@ namespace lemon{
 			const function<void()> &f) :
 			id(_id),
 			sig(new(nothrow)flowcontrol::signal()),
-			coro(new(nothrow)coroutine(*this, f)){
-		}
-		handle task::create_handle() const{
-
-			return microthread::handle(
-				id, coro, sig);
+			coro(new(nothrow)coroutine(*this, f)),
+			handle(id, coro, sig){
 		}
 
-		handle create(
+		handle &create(
 			const function<void()> &f){
 
 			auto id = _id.fetch_add(1);
@@ -42,7 +38,7 @@ namespace lemon{
 
 			slot = std::move(t);
 
-			return slot->create_handle();
+			return slot->handle;
 		}
 	};
 };
