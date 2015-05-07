@@ -65,8 +65,9 @@ namespace lemon{
 		bool handle::is_yieldable() const{
 			return true;
 		}
-		void handle::set_yieldable(bool v){
+		handle &handle::set_yieldable(bool v){
 
+			return *this;
 		}
 	};
 };

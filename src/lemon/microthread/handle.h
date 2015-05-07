@@ -27,7 +27,7 @@ namespace lemon{
 			virtual unsigned int get_id() const;
 
 			bool is_yieldable() const;
-			void set_yieldable(bool v);
+			handle &set_yieldable(bool v);
 
 			handle &operator=(handle &&other);
 
