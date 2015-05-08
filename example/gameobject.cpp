@@ -12,7 +12,7 @@ private:
 void game_object::schedule_update(){
   /* 단순히 while(true)를 돌면서 update를 호출하고 1프레임 대기하는것을 */
   /* 반복하는것만으로도 업데이트를 스케쥴링 할 수 있다. */
-  microthread::task([this](){
+  microthread::create([this](){
     while(true){
       update();
       delay(time::frame<60>(1));
@@ -47,7 +47,7 @@ void some_func(){
   
   printf("begin move_to async\n");
     /* 새 태스크를 만들어 async하게 처리한다 */
-    microthread::task([&obj](){
+    microthread::create([&obj](){
       obj.move_to(time::second(2.0f), 50,50);
     }).schedule();
   printf("end move_to async\n"); /* 이 명령은 move_to의 완료와 관계 없이 바로 실행된다. */
