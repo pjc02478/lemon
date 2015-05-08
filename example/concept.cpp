@@ -16,8 +16,8 @@ void render(){
 
 void main(){
   /* 새로운 태스크를 만들고 실행 */
-  auto t = microthread::task(func);
-  t.schedule();
+  auto &handle = microthread::create(func)
+    .schedule();
   
   while(true){
     render();
