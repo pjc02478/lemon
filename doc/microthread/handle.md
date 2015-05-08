@@ -1,4 +1,4 @@
-lemon::microthread::task
+lemon::microthread::handle
 ====
 
 description
@@ -19,16 +19,16 @@ properties
 usage
 ----
 ```C++
-
 void func(){
   printf("hello task!\n");
-  t->yield();
+  /* ... */
   printf("bye task!\n");
 }
 void main(){
-  auto t = task(func);
+  microthread::handle &h =
+    microthread::create(func);
   
-  t.schedule(); /* hello task! */
-  t.schedule(); /* bye task! */
+  h.schedule(); /* hello task! */
+  h.schedule(); /* bye task! */
 }
 ```
