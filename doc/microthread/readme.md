@@ -4,7 +4,7 @@ lemon::microthread
 classes
 ----
 * microthread
-  * [task](task.md)
+  * [handle](handle.md)
 
 functions
 ----
