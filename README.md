@@ -56,9 +56,9 @@ pros
     printf("hello update!\n");
   }
   void object::schedule_update(){
-    microthread::task([this](){
+    microthread::create([this](){
       while(true){
-        delay(frame<60>(1));
+        flowcontrol::delay(frame<60>(1));
         update();
       }
     }).schedule();
