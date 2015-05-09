@@ -46,7 +46,14 @@ namespace lemon{
 				t();
 
 				while(true){
-					
+					sig.wait();
+
+					function<void()> job;
+
+					if(!job_q.try_pop(job))
+						continue;
+
+					job();
 				}
 			}
 
