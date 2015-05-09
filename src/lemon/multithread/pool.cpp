@@ -29,8 +29,9 @@ namespace lemon{
 			static atomic<unsigned int> busy(0);
 			static unsigned int max_workers;
 
-			bool initialize(unsigned int _max_workers){
-				max_workers = _max_workers;
+			bool initialize(){
+				max_workers =
+					thread::hardware_concurrency() * 2;
 
 				return true;
 			}

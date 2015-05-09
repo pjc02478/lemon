@@ -6,7 +6,7 @@ namespace lemon{
 	namespace multithread{
 		namespace pool{
 
-			bool initialize(unsigned int max_workers=10);
+			bool initialize();
 			void quit();
 
 			unsigned int get_workers();
