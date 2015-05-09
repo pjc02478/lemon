@@ -21,8 +21,8 @@ namespace lemon{
 	namespace multithread{
 		namespace pool{
 
-			static concurrent_queue<std::function<void()>> q;
-			static mutex q_mutex;
+			static concurrent_queue<std::function<void()>> job_q;
+			static mutex job_q_mutex;
 			static event sig;
 			
 			static vector<thread> workers;
@@ -63,7 +63,7 @@ namespace lemon{
 						thread(bind(worker_func, t)));
 				}
 				else{
-					q.push(t);
+					job_q.push(t);
 				}
 			}
 		};
