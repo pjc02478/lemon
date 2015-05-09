@@ -21,7 +21,7 @@ namespace lemon{
 	namespace multithread{
 		namespace pool{
 
-			static concurrent_queue<std::function<void()>> job_q;
+			static concurrent_queue<function<void()>> job_q;
 			static mutex job_q_mutex;
 			static event sig;
 			
@@ -42,7 +42,7 @@ namespace lemon{
 				return workers.size();
 			}
 
-			void worker_func(const std::function<void()> &t){
+			void worker_func(const function<void()> &t){
 				t();
 
 				while(true){
@@ -57,7 +57,7 @@ namespace lemon{
 				}
 			}
 
-			void enqueue(const std::function<void()> &t){
+			void enqueue(const function<void()> &t){
 				/* enqueue는 외부 스레드에서 실행될 수 없다 */
 				assert(get_mainthread_id() == this_thread::get_id());
 
