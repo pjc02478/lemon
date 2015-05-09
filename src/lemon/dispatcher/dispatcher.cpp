@@ -17,7 +17,7 @@ namespace lemon{
 			last(time::now()){
 		}
 
-		timer &add_timer(const timer &t){
+		timer &add_timer(timer &t){
 			pending.push_back(t);
 
 			return *pending.rbegin();

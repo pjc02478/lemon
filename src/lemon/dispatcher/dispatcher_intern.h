@@ -14,6 +14,6 @@ namespace lemon{
 			timer();
 		};
 
-		timer &add_timer(const timer &t);
+		timer &add_timer(timer &t);
 	};
 };
