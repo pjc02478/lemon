@@ -3,7 +3,10 @@
 #include "../lemon.h"
 #ifdef P_WIN32
 	#include "win32/concurrent_queue_win32.h"
+	#include "win32/event_win32.h"
 #endif
+
+#include "../core/core_intern.h"
 
 #include <queue>
 #include <thread>
@@ -20,7 +23,7 @@ namespace lemon{
 
 			static concurrent_queue<std::function<void()>> q;
 			static mutex q_mutex;
-			static condition_variable sig;
+			static event sig;
 			
 			static vector<thread> workers;
 			static atomic<unsigned int> busy(0);
@@ -48,6 +51,9 @@ namespace lemon{
 			}
 
 			void enqueue(const std::function<void()> &t){
+				/* enqueue는 외부 스레드에서 실행될 수 없다 */
+				assert(get_mainthread_id() == this_thread::get_id());
+
 				auto current = get_workers();
 
 				if(	current - busy == 0 &&
