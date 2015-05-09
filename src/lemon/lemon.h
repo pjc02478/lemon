@@ -2,6 +2,8 @@
 
 #include "plaftorm.h"
 
+#include "core/core.h"
+
 #include "time/time.h"
 #include "time/units.h"
 
@@ -10,5 +12,7 @@
 
 #include "microthread/microthread.h"
 #include "microthread/task.h"
+
+#include "multithread/pool.h"
 
 #include "dispatcher/dispatcher.h"

@@ -9,13 +9,13 @@ namespace lemon{
 	
 	extern thread::id mainthread_id;
 
-	bool initialize(){
+	bool initialize_sys(){
 		mainthread_id = this_thread::get_id();
 
 		return 
 			ConvertThreadToFiber(0) != nullptr ? true : false;
 	}
-	void quit(){
+	void quit_sys(){
 		ConvertFiberToThread();
 	}
 };

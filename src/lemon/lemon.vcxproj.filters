@@ -45,6 +45,15 @@
     <ClCompile Include="microthread\handle.cpp">
       <Filter>lemon\microthread</Filter>
     </ClCompile>
+    <ClCompile Include="multithread\win32\event_win32.cpp">
+      <Filter>lemon\multithread\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="core\core.cpp">
+      <Filter>lemon\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\win32\core_win32.cpp">
+      <Filter>lemon\core\win32</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lemon.h">
@@ -103,6 +112,15 @@
     <ClInclude Include="microthread\handle.h">
       <Filter>lemon\microthread</Filter>
     </ClInclude>
+    <ClInclude Include="multithread\win32\event_win32.h">
+      <Filter>lemon\multithread\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="core\core.h">
+      <Filter>lemon\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\core_intern.h">
+      <Filter>lemon\core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="lemon">
@@ -131,6 +149,12 @@
     </Filter>
     <Filter Include="lemon\profiler">
       <UniqueIdentifier>{8be862fb-f8c8-4643-88cc-35057d188ba3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\core">
+      <UniqueIdentifier>{8316ab96-4d62-4e85-8b5e-149ad11abbaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\core\win32">
+      <UniqueIdentifier>{449145db-7dc3-4258-8e69-fdb314ae4571}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
