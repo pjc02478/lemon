@@ -70,7 +70,6 @@ namespace lemon{
 				if(	current - busy == 0 &&
 					current < max_workers){
 
-
 					workers.push_back(
 						thread(bind(worker_func, job)));
 				}

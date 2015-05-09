@@ -15,7 +15,7 @@ using namespace std;
 using namespace lemon;
 
 void main(){
-	ConvertThreadToFiber(0);
+	initialize();
 
 	profiler::start();
 
@@ -70,6 +70,13 @@ void main(){
 		printf("delayed\n");
 	});
 	handle2.schedule();
+
+	multithread::pool::enqueue(
+		[](){
+		printf("hello world\n");
+		Sleep(1000);
+		printf("bye world\n");
+		});
 
 	/*
 	microthread::task abc([](){});

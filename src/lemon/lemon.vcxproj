@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClInclude Include="core\core.h" />
     <ClInclude Include="core\core_intern.h" />
+    <ClInclude Include="core\win32\core_win32.h" />
     <ClInclude Include="dispatcher\dispatcher.h" />
     <ClInclude Include="dispatcher\dispatcher_intern.h" />
     <ClInclude Include="flowcontrol\delay.h" />

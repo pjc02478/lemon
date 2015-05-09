@@ -121,6 +121,9 @@
     <ClInclude Include="core\core_intern.h">
       <Filter>lemon\core</Filter>
     </ClInclude>
+    <ClInclude Include="core\win32\core_win32.h">
+      <Filter>lemon\core\win32</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="lemon">
