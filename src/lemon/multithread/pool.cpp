@@ -42,8 +42,12 @@ namespace lemon{
 				return workers.size();
 			}
 
+			void invoke(const function<void()> job){
+				/* try-catch ?? */
+				job();
+			}
 			void worker_func(const function<void()> &initial_job){
-				initial_job();
+				invoke(initial_job);
 
 				while(true){
 					sig.wait();
@@ -53,7 +57,7 @@ namespace lemon{
 					if(!job_q.try_pop(job))
 						continue;
 
-					job();
+					invoke(job);
 				}
 			}
 
