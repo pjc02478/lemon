@@ -11,7 +11,7 @@ namespace lemon{
 
 			unsigned int get_workers();
 
-			void enqueue(const std::function<void()> &t);
+			void enqueue(const std::function<void()> &job);
 		};
 	};
 };

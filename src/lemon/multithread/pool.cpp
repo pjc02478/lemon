@@ -42,8 +42,8 @@ namespace lemon{
 				return workers.size();
 			}
 
-			void worker_func(const function<void()> &t){
-				t();
+			void worker_func(const function<void()> &initial_job){
+				initial_job();
 
 				while(true){
 					sig.wait();
@@ -57,7 +57,7 @@ namespace lemon{
 				}
 			}
 
-			void enqueue(const function<void()> &t){
+			void enqueue(const function<void()> &job){
 				/* enqueue는 외부 스레드에서 실행될 수 없다 */
 				assert(get_mainthread_id() == this_thread::get_id());
 
@@ -67,10 +67,10 @@ namespace lemon{
 					current < max_workers){
 
 					workers.push_back(
-						thread(bind(worker_func, t)));
+						thread(bind(worker_func, job)));
 				}
 				else{
-					job_q.push(t);
+					job_q.push(job);
 				}
 			}
 		};
