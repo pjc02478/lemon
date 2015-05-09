@@ -58,7 +58,7 @@ pros
   void object::schedule_update(){
     microthread::create([this](){
       while(true){
-        flowcontrol::delay(frame<60>(1));
+        flowcontrol::delay(time::frame<60>(1));
         update();
       }
     }).schedule();
