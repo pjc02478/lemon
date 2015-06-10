@@ -10,6 +10,7 @@
 
 
 #include "profiler/profiler.h"
+#include "core/future.h"
 
 using namespace std;
 using namespace lemon;
@@ -18,6 +19,10 @@ void main(){
 	initialize();
 
 	profiler::start();
+
+	future<int&> a;
+
+	a.get_value();
 
 	/*
 	lemon::microthread::task a([](){

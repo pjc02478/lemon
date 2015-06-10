@@ -54,6 +54,9 @@
     <ClCompile Include="core\win32\core_win32.cpp">
       <Filter>lemon\core\win32</Filter>
     </ClCompile>
+    <ClCompile Include="core\future.cpp">
+      <Filter>lemon\core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lemon.h">
@@ -123,6 +126,9 @@
     </ClInclude>
     <ClInclude Include="core\win32\core_win32.h">
       <Filter>lemon\core\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="core\future.h">
+      <Filter>lemon\core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
