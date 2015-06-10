@@ -57,13 +57,14 @@ namespace lemon{
 			auto sig = sig_wp.lock();
 
 			if(sig){
-				
+				/*
 				sig->add_waiting_context(
 					get_current());
 
 				flowcontrol::delay_until(*sig);
-				
-				//sig->wait();
+				*/
+
+				sig->wait();
 			}
 		}
 
