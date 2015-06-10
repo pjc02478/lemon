@@ -16,10 +16,10 @@ namespace lemon{
 			delay_until(
 				dispatcher::add_timer(tmr).sig);
 		}
-		void delay_until(signal &s){
+		void delay_until(signal &sig){
 			auto &current = microthread::get_current();
 
-			s.add_waiting_context(current);
+			sig.add_waiting_context(current);
 
 			current.handle.yield();
 		}

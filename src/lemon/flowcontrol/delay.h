@@ -14,6 +14,6 @@ namespace lemon{
 		/* 지정된 시간만큼 대기합니다 */
 		void delay(const time::unit &t);
 		/* 지정된 signal 오브젝트에 알림이 올 때 까지 대기합니다 */
-		void delay_until(signal &s);
+		void delay_until(signal &sig);
 	};
 };
