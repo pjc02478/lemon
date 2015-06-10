@@ -70,7 +70,7 @@ void main(){
 	handle.schedule();
 	*/
 
-	
+	/*
 	flowcontrol::signal s;
 
 	auto &handle = microthread::create([&s](){
@@ -82,8 +82,8 @@ void main(){
 	});
 
 	handle.schedule();
+	*/
 	
-	/*
 	auto &handle = microthread::create([](){
 		printf("hello\n");
 		flowcontrol::delay();
@@ -107,7 +107,7 @@ void main(){
 		Sleep(1000);
 		printf("bye world\n");
 		});
-	*/
+	
 	/*
 	microthread::task abc([](){});
 	{
