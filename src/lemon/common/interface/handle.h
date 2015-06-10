@@ -15,14 +15,15 @@ namespace lemon{
 			using type = decltype(Fn<T>(0));
 		};
 
-		//template <typename T>
+		template <typename T>
 		class handle{
-			//using id_t =
-			//	typename get_id_type<T, unsigned int>::type;
+		public:
+			using id_t =
+				typename get_id_type<T, unsigned int>::type;
 
 		public:
-			//virtual id_t get_id() const =0;
-			virtual unsigned int get_id() const =0;
+			virtual id_t get_id() const =0;
+			//virtual unsigned int get_id() const =0;
 			virtual void join() const =0;
 		};
 	};
