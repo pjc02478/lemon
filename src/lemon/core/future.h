@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "../flowcontrol/signal.h"
+
 namespace lemon{
 
 	template <typename T>
@@ -12,7 +14,7 @@ namespace lemon{
 		}
 
 		void wait() const{
-
+			sig.wait();
 		}
 
 	protected:
@@ -21,8 +23,10 @@ namespace lemon{
 		}
 
 	private:
-		bool has_value;
+		flowcontrol::signal sig;
+
 		T value;
+		bool has_value;
 	};
 	
 	template <typename T>
