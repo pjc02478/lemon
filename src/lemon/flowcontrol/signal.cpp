@@ -5,8 +5,11 @@
 namespace lemon{
 	namespace flowcontrol{
 		void signal::wait(){
-			add_waiting_context(
-				microthread::get_current());
+			auto &current = microthread::get_current();
+
+			add_waiting_context(current);
+
+			current.handle.yield();
 		}
 		void signal::add_waiting_context(const microthread::task &ctx){
 			ctxs.push(ctx);
