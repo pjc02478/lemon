@@ -20,8 +20,6 @@ void main(){
 
 	profiler::start();
 
-	future<int&> a;
-
 	/*
 	lemon::microthread::task a([](){
 		printf("123\n");
