@@ -22,8 +22,6 @@ void main(){
 
 	future<int&> a;
 
-	a.get_value();
-
 	/*
 	lemon::microthread::task a([](){
 		printf("123\n");
