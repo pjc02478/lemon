@@ -16,7 +16,7 @@ namespace lemon{
 			/* 대기하고 있는 모든 context를 깨웁니다 */
 			unsigned int notify_all();
 
-		protected:
+		//protected:
 			void add_waiting_context(const microthread::task &ctx);
 
 		private:

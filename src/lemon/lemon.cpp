@@ -53,6 +53,21 @@ void main(){
 		printf("end of c\n");
 	});
 	b.schedule();
+	
+	*/
+	
+	/*
+	flowcontrol::signal s;
+
+	auto &handle = microthread::create([&s](){
+		printf("hello\n");
+		s.wait();
+		printf("world\n");
+		s.wait();
+		printf("bye\n");
+	});
+
+	handle.schedule();
 	*/
 
 	
@@ -92,7 +107,7 @@ void main(){
 		Sleep(1000);
 		printf("bye world\n");
 		});
-		*/
+	*/
 	/*
 	microthread::task abc([](){});
 	{
@@ -118,9 +133,6 @@ void main(){
 		Sleep(1000 / 60);
 
 		if (kbhit() && profiler::is_profiling() ){
-			
-			s.notify_all();
-
 			auto &&pd = profiler::end();
 
 			pd.print();
