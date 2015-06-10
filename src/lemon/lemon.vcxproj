@@ -79,6 +79,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="common\interface\handle.h" />
     <ClInclude Include="core\core.h" />
     <ClInclude Include="core\core_intern.h" />
     <ClInclude Include="core\future.h" />

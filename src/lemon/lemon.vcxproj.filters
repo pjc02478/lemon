@@ -130,6 +130,9 @@
     <ClInclude Include="core\future.h">
       <Filter>lemon\core</Filter>
     </ClInclude>
+    <ClInclude Include="common\interface\handle.h">
+      <Filter>lemon\common\interface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="lemon">
@@ -164,6 +167,12 @@
     </Filter>
     <Filter Include="lemon\core\win32">
       <UniqueIdentifier>{449145db-7dc3-4258-8e69-fdb314ae4571}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\common">
+      <UniqueIdentifier>{da11e318-4491-47f1-b9f3-bbb9dd7f1398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\common\interface">
+      <UniqueIdentifier>{7bf1aef9-ec65-455d-b0d8-729f98acb66e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
