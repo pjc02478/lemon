@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include <stack>
+#include <vector>
 
 #include "../microthread/task.h"
 
@@ -20,7 +20,7 @@ namespace lemon{
 			void add_waiting_context(const microthread::task &ctx);
 
 		private:
-			std::stack<std::reference_wrapper<const microthread::task>> ctxs;
+			std::vector<std::reference_wrapper<const microthread::task>> ctxs;
 		};
 	};
 };
