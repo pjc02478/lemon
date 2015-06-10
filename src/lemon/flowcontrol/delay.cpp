@@ -17,7 +17,11 @@ namespace lemon{
 				dispatcher::add_timer(tmr).sig);
 		}
 		void delay_until(signal &sig){
-			sig.wait();
+			auto &current = microthread::get_current();
+
+			sig.add_waiting_context(current);
+
+			current.handle.yield();
 		}
 	};
 };

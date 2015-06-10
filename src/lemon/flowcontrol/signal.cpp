@@ -4,6 +4,12 @@
 
 namespace lemon{
 	namespace flowcontrol{
+		// push : always 'target'
+		// pop : always 'ctxs'
+		signal::signal() :
+			target(&ctxs){
+		}
+
 		void signal::wait(){
 			auto &current = microthread::get_current();
 
@@ -12,7 +18,7 @@ namespace lemon{
 			current.handle.yield();
 		}
 		void signal::add_waiting_context(const microthread::task &ctx){
-			ctxs.push(ctx);
+			target->push(ctx);
 		}
 		bool signal::notify_one(){
 			if (ctxs.empty())
@@ -25,6 +31,8 @@ namespace lemon{
 			return true;
 		}
 		unsigned int signal::notify_all(){
+			//target = &pending;
+
 			unsigned int c = 0;
 
 			while (notify_one())
