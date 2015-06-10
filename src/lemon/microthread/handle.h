@@ -15,10 +15,10 @@ namespace lemon{
 	namespace microthread{
 		class coroutine;
 
-		class handle : public intf::handle{
+		class handle : public intf::handle<handle>{
 		public:
 			handle(
-				unsigned int id,
+				id_t id,
 				std::weak_ptr<coroutine> coro_wp,
 				std::weak_ptr<flowcontrol::signal> sig_wp);
 			handle(handle &&);
@@ -29,7 +29,7 @@ namespace lemon{
 			const handle &schedule() const;
 
 			virtual void join() const;
-			virtual unsigned int get_id() const;
+			virtual id_t get_id() const;
 
 			bool is_yieldable() const;
 			handle &set_yieldable(bool v);
@@ -41,7 +41,7 @@ namespace lemon{
 			handle &operator=(const handle &other);
 
 		private:
-			unsigned int id;
+			id_t id;
 
 			std::weak_ptr<flowcontrol::signal> sig_wp;
 			std::weak_ptr<coroutine> coro_wp;
