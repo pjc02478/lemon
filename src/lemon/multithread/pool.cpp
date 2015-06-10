@@ -55,10 +55,9 @@ namespace lemon{
 
 					function<void()> job;
 
-					if(!job_q.try_pop(job))
-						continue;
-
-					invoke(job);
+					while(job_q.try_pop(job)){
+						invoke(job);
+					}
 				}
 			}
 
