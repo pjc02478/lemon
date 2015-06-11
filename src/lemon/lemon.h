@@ -3,6 +3,7 @@
 #include "plaftorm.h"
 
 #include "core/core.h"
+#include "core/future.h"
 
 #include "time/time.h"
 #include "time/units.h"
