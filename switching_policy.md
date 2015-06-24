@@ -6,11 +6,11 @@
   * dispatcher::binding_policy::bind_main
     작업 이후 반드시 메인 스레드에 바인딩된다
 
-* main thread
-  디폴트 : current
+* main thread<br>
+ 디폴트 : current
   
-* worker thread
-  디폴트 : any_worker
+* worker thread<br>
+ 디폴트 : any_worker
 
 ```C++
 dispatcher::current_dispatcher::set_binding_policy(
