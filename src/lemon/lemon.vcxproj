@@ -83,6 +83,7 @@
     <ClInclude Include="core\core.h" />
     <ClInclude Include="core\core_intern.h" />
     <ClInclude Include="core\future.h" />
+    <ClInclude Include="core\promise.h" />
     <ClInclude Include="core\win32\core_win32.h" />
     <ClInclude Include="dispatcher\dispatcher.h" />
     <ClInclude Include="dispatcher\dispatcher_intern.h" />
@@ -109,6 +110,7 @@
   <ItemGroup>
     <ClCompile Include="core\core.cpp" />
     <ClCompile Include="core\future.cpp" />
+    <ClCompile Include="core\promise.cpp" />
     <ClCompile Include="core\win32\core_win32.cpp" />
     <ClCompile Include="dispatcher\dispatcher.cpp" />
     <ClCompile Include="flowcontrol\delay.cpp" />

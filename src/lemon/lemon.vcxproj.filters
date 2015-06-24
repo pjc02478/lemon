@@ -57,6 +57,9 @@
     <ClCompile Include="core\future.cpp">
       <Filter>lemon\core</Filter>
     </ClCompile>
+    <ClCompile Include="core\promise.cpp">
+      <Filter>lemon\core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lemon.h">
@@ -132,6 +135,9 @@
     </ClInclude>
     <ClInclude Include="common\interface\handle.h">
       <Filter>lemon\common\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="core\promise.h">
+      <Filter>lemon\core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

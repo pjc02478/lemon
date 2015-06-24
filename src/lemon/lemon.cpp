@@ -84,6 +84,7 @@ void main(){
 	handle.schedule();
 	*/
 	
+	/*
 	auto &handle = microthread::create([](){
 		printf("hello\n");
 		flowcontrol::delay();
@@ -107,7 +108,8 @@ void main(){
 		Sleep(1000);
 		printf("bye world\n");
 		});
-	
+	*/
+
 	/*
 	microthread::task abc([](){});
 	{
@@ -126,8 +128,30 @@ void main(){
 	}
 	*/
 
+
+	promise<int> pr;
+
+	multithread::pool::enqueue([&pr](){
+		Sleep(1000);
+
+		dispatcher::main_thread.enqueue([&pr](){
+			pr.set_value(4);
+		});
+	});
+
+	auto &m = microthread::create([&pr](){
+		auto ft = pr.get_future();
+
+		printf("%d\n", std::this_thread::get_id());
+
+		printf("%d\n", ft.get());
+
+		printf("%d\n", std::this_thread::get_id());
+	});
+	m.schedule();
+
 	while (true){		
-		lemon::dispatcher::step();
+		dispatcher::main_thread.step();
 
 		printf("-");
 		Sleep(1000 / 60);

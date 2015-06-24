@@ -4,50 +4,57 @@
 #include "../time/time.h"
 
 #include <vector>
+#include <queue>
 
 using namespace std;
 
 namespace lemon{
-	namespace dispatcher{
+	dispatcher::timer::timer() :
+		last(time::now()){
+	}
 
-		static vector<timer> pending;
-		static vector<timer> running;
+	dispatcher::timer &dispatcher::add_timer(dispatcher::timer &t){
+		pending.push_back(t);
 
-		timer::timer() :
-			last(time::now()){
-		}
+		return *pending.rbegin();
+	}
 
-		timer &add_timer(timer &t){
-			pending.push_back(t);
+	dispatcher dispatcher::main_thread;
 
-			return *pending.rbegin();
-		}
+	void dispatcher::enqueue(const function<void()> &func){
+		jobs.push(func);
+	}
+	void dispatcher::step(){
+		for (auto it = running.begin(); it != running.end();){
+			auto t = it;
 
-		void step(){
-			for (auto it = running.begin(); it != running.end();){
-				auto t = it;
+			t->remain -= time::now() - t->last;
+			t->last = time::now();
 
-				t->remain -= time::now() - t->last;
-				t->last = time::now();
+			if (t->remain <= 0){
+				t->sig.notify_one();
 
-				if (t->remain <= 0){
-					t->sig.notify_one();
+				it = running.erase(it);
 
-					it = running.erase(it);
-
-					if (it == running.end())
-						break;
-				}
-
-				++it;
+				if (it == running.end())
+					break;
 			}
 
-			if (!pending.empty()){
-				running.insert(
-					running.end(),
-					pending.begin(), pending.end());
-				pending.clear();
-			}
+			++it;
 		}
-	};
+
+		if (!pending.empty()){
+			running.insert(
+				running.end(),
+				pending.begin(), pending.end());
+			pending.clear();
+		}
+
+		while(jobs.empty() == false){
+			auto job = jobs.front();
+			jobs.pop();
+
+			job();
+		}
+	}
 };

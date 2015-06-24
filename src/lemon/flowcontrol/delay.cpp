@@ -1,6 +1,7 @@
 #include "delay.h"
 
 #include "../microthread/microthread.h"
+#include "../dispatcher/dispatcher.h"
 #include "../dispatcher/dispatcher_intern.h"
 
 namespace lemon{
@@ -14,7 +15,7 @@ namespace lemon{
 			tmr.remain = t.to_s();
 
 			delay_until(
-				dispatcher::add_timer(tmr).sig);
+				dispatcher::main_thread.add_timer(tmr).sig);
 		}
 		void delay_until(signal &sig){
 			sig.wait();
