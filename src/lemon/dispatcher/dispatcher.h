@@ -30,6 +30,7 @@ namespace lemon{
 		void step();
 
 	private:
+		/* therad_safe ÆÐÄ¡ */
 		std::vector<timer> pending;
 		std::vector<timer> running;
 		std::queue<std::function<void()>> jobs;
