@@ -3,7 +3,7 @@
 using namespace std;
 
 namespace lemon{
-	namespace multithread{
+	namespace sync{
 		
 	};
 };

@@ -3,7 +3,7 @@
 #include <concurrent_queue.h>
 
 namespace lemon{
-	namespace multithread{
+	namespace sync{
 		
 		template <typename T>
 		class concurrent_queue{

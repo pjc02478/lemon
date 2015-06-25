@@ -5,7 +5,7 @@
 using namespace std;
 
 namespace lemon{
-	namespace multithread{
+	namespace sync{
 		
 		event::event() :
 			h_event(nullptr){

@@ -3,7 +3,7 @@
 #include <windows.h>
 
 namespace lemon{
-	namespace multithread{
+	namespace sync{
 		
 		class event{
 		public:

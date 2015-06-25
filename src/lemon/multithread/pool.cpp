@@ -21,9 +21,9 @@ namespace lemon{
 	namespace multithread{
 		namespace pool{
 
-			static concurrent_queue<function<void()>> job_q;
+			static sync::concurrent_queue<function<void()>> job_q;
 			static mutex job_q_mutex;
-			static event sig;
+			static sync::event sig;
 			
 			static vector<thread> workers;
 			static atomic<unsigned int> busy(0);
