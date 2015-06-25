@@ -9,6 +9,7 @@
 #include <thread>
 
 
+#include "multithread/task.h"
 #include "profiler/profiler.h"
 #include "core/future.h"
 
@@ -128,7 +129,7 @@ void main(){
 	}
 	*/
 
-
+	/*
 	promise<int> pr;
 
 	multithread::pool::enqueue([&pr](){
@@ -147,6 +148,19 @@ void main(){
 		printf("%d\n", ft.get());
 
 		printf("%d\n", std::this_thread::get_id());
+	});
+	m.schedule();
+	*/
+	
+	auto handle = multithread::create<int>([](){
+		Sleep(1000);
+		printf("ASDF");
+
+		return 4;
+	});
+
+	auto &m = microthread::create([&handle](){
+		cout<<handle.get();
 	});
 	m.schedule();
 

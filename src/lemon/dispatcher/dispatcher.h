@@ -8,6 +8,11 @@
 #include "../flowcontrol/signal.h"
 
 namespace lemon{
+	namespace sync{
+		template <typename T>
+		class concurrent_queue;
+	};
+
 	struct timer;
 
 	class dispatcher{
