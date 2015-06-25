@@ -57,4 +57,17 @@ namespace lemon{
 			job();
 		}
 	}
+
+	void dispatcher::push_binding_policy(dispatcher::binding_policy policy){
+		binding_policies.push(policy);
+	}
+	dispatcher::binding_policy dispatcher::pop_binding_policy(){
+		auto policy = binding_policies.top();
+		binding_policies.pop();
+
+		return policy;
+	}
+	dispatcher::binding_policy dispatcher::get_current_binding_policy(){
+		return binding_policies.top();
+	}
 };
