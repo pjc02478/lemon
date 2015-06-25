@@ -2,8 +2,8 @@
 
 #include "../lemon.h"
 #ifdef P_WIN32
-	#include "win32/concurrent_queue_win32.h"
-	#include "win32/event_win32.h"
+	#include "../common/win32/concurrent_queue_win32.h"
+	#include "../common/win32/event_win32.h"
 #endif
 
 #include "../core/core_intern.h"

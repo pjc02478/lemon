@@ -30,9 +30,6 @@
     </ClCompile>
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="lemon.cpp" />
-    <ClCompile Include="multithread\win32\concurrent_queue_win32.cpp">
-      <Filter>lemon\multithread\win32</Filter>
-    </ClCompile>
     <ClCompile Include="profiler\profiler.cpp">
       <Filter>lemon\profiler</Filter>
     </ClCompile>
@@ -45,9 +42,6 @@
     <ClCompile Include="microthread\handle.cpp">
       <Filter>lemon\microthread</Filter>
     </ClCompile>
-    <ClCompile Include="multithread\win32\event_win32.cpp">
-      <Filter>lemon\multithread\win32</Filter>
-    </ClCompile>
     <ClCompile Include="core\core.cpp">
       <Filter>lemon\core</Filter>
     </ClCompile>
@@ -59,6 +53,12 @@
     </ClCompile>
     <ClCompile Include="core\promise.cpp">
       <Filter>lemon\core</Filter>
+    </ClCompile>
+    <ClCompile Include="common\win32\concurrent_queue_win32.cpp">
+      <Filter>lemon\common\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="common\win32\event_win32.cpp">
+      <Filter>lemon\common\win32</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,9 +103,6 @@
     </ClInclude>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="multithread\win32\concurrent_queue_win32.h">
-      <Filter>lemon\multithread\win32</Filter>
-    </ClInclude>
     <ClInclude Include="profiler\profiler.h">
       <Filter>lemon\profiler</Filter>
     </ClInclude>
@@ -117,9 +114,6 @@
     </ClInclude>
     <ClInclude Include="microthread\handle.h">
       <Filter>lemon\microthread</Filter>
-    </ClInclude>
-    <ClInclude Include="multithread\win32\event_win32.h">
-      <Filter>lemon\multithread\win32</Filter>
     </ClInclude>
     <ClInclude Include="core\core.h">
       <Filter>lemon\core</Filter>
@@ -139,6 +133,12 @@
     <ClInclude Include="core\promise.h">
       <Filter>lemon\core</Filter>
     </ClInclude>
+    <ClInclude Include="common\win32\concurrent_queue_win32.h">
+      <Filter>lemon\common\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="common\win32\event_win32.h">
+      <Filter>lemon\common\win32</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="lemon">
@@ -149,9 +149,6 @@
     </Filter>
     <Filter Include="lemon\multithread">
       <UniqueIdentifier>{45590b08-80a4-49a1-8b37-456788e9b916}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="lemon\multithread\win32">
-      <UniqueIdentifier>{e52da4de-7534-4656-8311-51eb428b3a0c}</UniqueIdentifier>
     </Filter>
     <Filter Include="lemon\microthread">
       <UniqueIdentifier>{ac0a856c-53a5-4e58-9299-1cd85a680dbd}</UniqueIdentifier>
@@ -179,6 +176,9 @@
     </Filter>
     <Filter Include="lemon\common\interface">
       <UniqueIdentifier>{7bf1aef9-ec65-455d-b0d8-729f98acb66e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lemon\common\win32">
+      <UniqueIdentifier>{d34b92c9-95f6-481e-8c6d-019a42d16f46}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

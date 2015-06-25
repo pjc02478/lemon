@@ -80,6 +80,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="common\interface\handle.h" />
+    <ClInclude Include="common\win32\concurrent_queue_win32.h" />
+    <ClInclude Include="common\win32\event_win32.h" />
     <ClInclude Include="core\core.h" />
     <ClInclude Include="core\core_intern.h" />
     <ClInclude Include="core\future.h" />
@@ -97,8 +99,6 @@
     <ClInclude Include="microthread\win32\coroutine_win32.h" />
     <ClInclude Include="multithread\pool.h" />
     <ClInclude Include="multithread\task.h" />
-    <ClInclude Include="multithread\win32\concurrent_queue_win32.h" />
-    <ClInclude Include="multithread\win32\event_win32.h" />
     <ClInclude Include="plaftorm.h" />
     <ClInclude Include="profiler\profiler.h" />
     <ClInclude Include="profiler\profiler_intern.h" />
@@ -108,6 +108,8 @@
     <ClInclude Include="time\units.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="common\win32\concurrent_queue_win32.cpp" />
+    <ClCompile Include="common\win32\event_win32.cpp" />
     <ClCompile Include="core\core.cpp" />
     <ClCompile Include="core\future.cpp" />
     <ClCompile Include="core\promise.cpp" />
@@ -123,8 +125,6 @@
     <ClCompile Include="microthread\win32\microthread_win32.cpp" />
     <ClCompile Include="multithread\pool.cpp" />
     <ClCompile Include="multithread\task.cpp" />
-    <ClCompile Include="multithread\win32\concurrent_queue_win32.cpp" />
-    <ClCompile Include="multithread\win32\event_win32.cpp" />
     <ClCompile Include="profiler\counter.cpp" />
     <ClCompile Include="profiler\profiler.cpp" />
     <ClCompile Include="stdafx.cpp" />
