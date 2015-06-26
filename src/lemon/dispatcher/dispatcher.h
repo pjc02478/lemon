@@ -32,13 +32,15 @@ namespace lemon{
 		};
 
 	public:
-		static dispatcher main_thread;
+		static dispatcher &get_main();
+		static dispatcher &get_current();
 
 	public:
 		timer &add_timer(timer &t);
 
 		void enqueue(const std::function<void()> &func);
 		void step();
+		void sleep(const time::unit &time);
 
 		void push_binding_policy(binding_policy policy);
 		binding_policy pop_binding_policy();

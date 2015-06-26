@@ -16,8 +16,8 @@
 using namespace std;
 using namespace lemon;
 
-void main(){
-	initialize();
+int lemon_main(int argc, char **argv){
+	flowcontrol::delay(time::second(1.5));
 
 	profiler::start();
 
@@ -85,7 +85,7 @@ void main(){
 	handle.schedule();
 	*/
 	
-	/*
+	
 	auto &handle = microthread::create([](){
 		printf("hello\n");
 		flowcontrol::delay();
@@ -109,7 +109,7 @@ void main(){
 		Sleep(1000);
 		printf("bye world\n");
 		});
-	*/
+	
 
 	/*
 	microthread::task abc([](){});
@@ -152,6 +152,7 @@ void main(){
 	m.schedule();
 	*/
 	
+/*
 	auto handle = multithread::create<int>([](){
 		Sleep(1000);
 		printf("ASDF");
@@ -163,17 +164,16 @@ void main(){
 		cout<<handle.get();
 	});
 	m.schedule();
-
+*/
 	while (true){		
-		dispatcher::main_thread.step();
-
 		printf("-");
-		Sleep(1000 / 60);
 
 		if (kbhit() && profiler::is_profiling() ){
 			auto &&pd = profiler::end();
 
 			pd.print();
 		}
+
+		flowcontrol::delay();
 	}
 }

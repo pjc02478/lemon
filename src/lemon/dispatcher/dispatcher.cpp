@@ -2,9 +2,12 @@
 #include "dispatcher_intern.h"
 
 #include "../time/time.h"
+#include "../time/units.h"
 
 #include <vector>
 #include <queue>
+
+#include <future>
 
 using namespace std;
 
@@ -14,12 +17,12 @@ namespace lemon{
 	}
 
 	dispatcher::timer &dispatcher::add_timer(dispatcher::timer &t){
-		pending.push_back(t);
+		pending.push_back(t);		
 
 		return *pending.rbegin();
 	}
 
-	dispatcher dispatcher::main_thread;
+	thread_local dispatcher current;
 
 	void dispatcher::enqueue(const function<void()> &func){
 		jobs.push(func);
@@ -56,6 +59,20 @@ namespace lemon{
 
 			job();
 		}
+	}
+	void dispatcher::sleep(const time::unit &time){
+		auto st = time::now();
+			step();
+		auto elapsed = time::now() - st;
+
+		_sleep(max(0.0f, (time.to_s() - elapsed)) * 1000.0f);
+	}
+
+	dispatcher &dispatcher::get_main() {
+		return current;
+	}
+	dispatcher &dispatcher::get_current(){
+		return current;
 	}
 
 	void dispatcher::push_binding_policy(dispatcher::binding_policy policy){

@@ -60,6 +60,9 @@
     <ClCompile Include="common\win32\event_win32.cpp">
       <Filter>lemon\common\win32</Filter>
     </ClCompile>
+    <ClCompile Include="core\main.cpp">
+      <Filter>lemon\core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lemon.h">
@@ -138,6 +141,9 @@
     </ClInclude>
     <ClInclude Include="common\win32\event_win32.h">
       <Filter>lemon\common\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="core\main.h">
+      <Filter>lemon\core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

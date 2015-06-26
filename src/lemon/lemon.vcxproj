@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -19,13 +19,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -85,6 +85,7 @@
     <ClInclude Include="core\core.h" />
     <ClInclude Include="core\core_intern.h" />
     <ClInclude Include="core\future.h" />
+    <ClInclude Include="core\main.h" />
     <ClInclude Include="core\promise.h" />
     <ClInclude Include="core\win32\core_win32.h" />
     <ClInclude Include="dispatcher\dispatcher.h" />
@@ -112,6 +113,7 @@
     <ClCompile Include="common\win32\event_win32.cpp" />
     <ClCompile Include="core\core.cpp" />
     <ClCompile Include="core\future.cpp" />
+    <ClCompile Include="core\main.cpp" />
     <ClCompile Include="core\promise.cpp" />
     <ClCompile Include="core\win32\core_win32.cpp" />
     <ClCompile Include="dispatcher\dispatcher.cpp" />

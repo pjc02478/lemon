@@ -14,6 +14,7 @@
 #include <atomic>
 #include <condition_variable>
 #include <mutex>
+#include <cassert>
 
 using namespace std;
 

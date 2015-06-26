@@ -15,7 +15,7 @@ namespace lemon{
 			tmr.remain = t.to_s();
 
 			delay_until(
-				dispatcher::main_thread.add_timer(tmr).sig);
+				dispatcher::get_current().add_timer(tmr).sig);
 		}
 		void delay_until(signal &sig){
 			sig.wait();
