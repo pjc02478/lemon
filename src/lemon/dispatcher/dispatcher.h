@@ -34,6 +34,10 @@ namespace lemon{
 	public:
 		static dispatcher &get_main();
 		static dispatcher &get_current();
+		static void set_main(dispatcher *main);
+
+	private:
+		static dispatcher *main;
 
 	public:
 		timer &add_timer(timer &t);

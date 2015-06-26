@@ -108,9 +108,13 @@ int lemon_main(int argc, char **argv){
 		printf("hello world\n");
 		Sleep(1000);
 		printf("bye world\n");
+
+			dispatcher::get_main().enqueue([](){
+				printf("on main %d\n", std::this_thread::get_id());
+			});
 		});
 	
-
+	printf("on main %d\n", std::this_thread::get_id());
 	/*
 	microthread::task abc([](){});
 	{

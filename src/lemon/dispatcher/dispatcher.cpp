@@ -22,6 +22,7 @@ namespace lemon{
 		return *pending.rbegin();
 	}
 
+	dispatcher *dispatcher::main = nullptr;
 	thread_local dispatcher current;
 
 	void dispatcher::enqueue(const function<void()> &func){
@@ -69,10 +70,13 @@ namespace lemon{
 	}
 
 	dispatcher &dispatcher::get_main() {
-		return current;
+		return *main;
 	}
 	dispatcher &dispatcher::get_current(){
 		return current;
+	}
+	void dispatcher::set_main(dispatcher *main){
+		dispatcher::main = main;
 	}
 
 	void dispatcher::push_binding_policy(dispatcher::binding_policy policy){

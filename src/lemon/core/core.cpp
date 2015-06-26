@@ -6,6 +6,7 @@
 #endif
 
 #include "../multithread/pool.h"
+#include "../dispatcher/dispatcher.h"
 
 #include <thread>
 
@@ -17,6 +18,8 @@ namespace lemon{
 
 	bool initialize(){
 		multithread::pool::initialize();
+
+		dispatcher::set_main(&dispatcher::get_current());
 
 		return initialize_sys();
 	}
