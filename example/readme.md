@@ -15,3 +15,5 @@ example
   * 이름 변경(?)
 * [init_and_quit](init_and_quit.cpp)<br>
   lemon을 사용해서 초기화와 정리 루틴을 한개의 함수에 직렬적으로 작성하는 방법을 보여줍니다.
+* [physics](physics.cpp)<br>
+  시간이 오래 걸리지만, 아주 실시간적일 필요가 없는 계산들 (물리 등...)을 lemon을 사용하여 분할 처리하는 방법을 보여줍니다.
