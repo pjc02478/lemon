@@ -7,6 +7,7 @@ void process_physics(){
     
     count ++;
     
+    /* 남은 작업은 다음 프레임에 처리한다 */
     if(count % 10 == 0)
       flowcontrol::delay();
   }
