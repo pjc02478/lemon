@@ -5,7 +5,10 @@ callback's flow
 ![callback1](imgs/callback1.png)
 ![callback2](imgs/callback2.png)<br>
 lemon's
-![lemon](imgs/lemon_flow.png)
+![lemon](imgs/lemon_flow.png)<br>
+<br>
+`lemon`은 C++에서 `코루틴/Fiber/Async&Await`등으로 불리는 기능을 사용할 수 있도록 해줍니다.<br>
+(VS2015 이상 버전에서는 `await`기능을 실험적적으로 지원합니다. (https://github.com/pjc0247/c11url#with-__await-syntax))
 
 todo
 ----
