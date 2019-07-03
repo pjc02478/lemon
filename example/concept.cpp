@@ -26,6 +26,7 @@ void main(){
     dispatcher::step();
     
     /* This makes the program rendered in 60fps */
+    /* `Sleep` is a win32api */
     Sleep(time::frame<60>::mspf);
   }
 }
