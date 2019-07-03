@@ -23,6 +23,6 @@ void main(){
     /* game loop */
   }
   
-  /* 시그널을 발생시켜 등록된 모든 종료 루틴을 처리시킨다 */
+  /* Notifies to execute all pending destruction routines. */
   on_quit.notify_all();
 }
